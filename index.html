@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>女性主义 · 一部思想地图 | Feminism — A Map of Ideas</title>
+<meta name="description" content="女性主义的完整导览：定义、它想改变什么、批判的对象、指出的路、历史浪潮、主要流派、关键思想家、核心概念、内部争论与外部批评。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@500;600;700&family=Noto+Serif+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   FEMINISM — A MAP OF IDEAS
+   Editorial / scholarly broadsheet aesthetic
+   Paper · Ink · Oxblood · Gold
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --paper:#FCFBF9;
+  --paper-2:#F5F3EE;
+  --paper-3:#ECEAE3;
+  --surface:#FFFFFF;
+  --ink:#1E1C19;
+  --ink-soft:#544F48;
+  --ink-faint:#8C887E;
+  --line:#E7E3DB;
+  --line-soft:#F1EEE7;
+  --crimson:#9A1B30;
+  --crimson-deep:#6C1020;
+  --ochre:#AE7C24;
+  --ochre-soft:#C79A4A;
+  --plum:#5C2A47;
+  --teal:#1E544F;
+  --indigo:#2A3A6B;
+  --forest:#3C5230;
+
+  --serif-cjk:"Noto Serif SC",serif;
+  --serif-lat:"Spectral","Noto Serif SC",Georgia,serif;
+  --display:"Fraunces","Noto Serif SC",Georgia,serif;
+  --label:"Archivo","Noto Sans SC",sans-serif;
+
+  --measure:46rem;
+  --gap:clamp(1.1rem,3vw,2rem);
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --shadow-sm:0 1px 2px rgba(30,28,25,.04),0 2px 8px rgba(30,28,25,.05);
+  --shadow-md:0 2px 6px rgba(30,28,25,.05),0 12px 28px -16px rgba(30,28,25,.14);
+  --shadow-lg:0 4px 12px rgba(30,28,25,.06),0 24px 50px -24px rgba(30,28,25,.18);
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif-lat);
+  font-size:clamp(1.02rem,.55rem + .65vw,1.16rem);
+  line-height:1.78;
+  letter-spacing:.005em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+  position:relative;
+}
+.cjk{font-family:var(--serif-cjk)}
+
+/* paper grain overlay — disabled for a clean, modern light surface */
+.grain{display:none}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(120% 80% at 85% -10%,rgba(174,124,36,.045),transparent 55%),
+    radial-gradient(100% 70% at -5% 110%,rgba(154,27,48,.03),transparent 50%);
+}
+
+/* reading progress */
+.progress{
+  position:fixed;top:0;left:0;height:3px;width:0%;z-index:1200;
+  background:linear-gradient(90deg,var(--crimson),var(--ochre));
+  transition:width .12s linear;
+}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;padding:.72rem clamp(1rem,4vw,3rem);
+  background:rgba(252,251,249,.86);
+  backdrop-filter:blur(12px) saturate(1.15);
+  -webkit-backdrop-filter:blur(12px) saturate(1.15);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 1px 0 rgba(255,255,255,.6),0 6px 20px -16px rgba(30,28,25,.25);
+}
+.wordmark{display:flex;align-items:baseline;gap:.6rem;text-decoration:none;color:var(--ink)}
+.wordmark .mk-cn{font-family:var(--display);font-weight:900;font-size:1.15rem;letter-spacing:.02em}
+.wordmark .mk-en{font-family:var(--label);font-weight:600;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--crimson)}
+.header-right{display:flex;align-items:center;gap:1rem}
+.here{font-family:var(--label);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);max-width:42vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toc-toggle{
+  display:none;align-items:center;gap:.45rem;cursor:pointer;
+  font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);border:none;border-radius:2px;padding:.5rem .8rem;
+}
+.toc-toggle svg{width:14px;height:14px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  padding:clamp(3.4rem,10vh,7rem) clamp(1.2rem,5vw,3rem) clamp(2.6rem,7vh,4.6rem);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero-inner{max-width:74rem;margin:0 auto}
+.hero .kicker{
+  font-family:var(--label);font-weight:600;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--crimson);display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem;
+}
+.hero .kicker::after{content:"";flex:1;height:1px;background:var(--line);max-width:240px}
+.hero h1{
+  font-family:var(--display);font-weight:900;
+  font-size:clamp(3.4rem,4rem + 7vw,9.5rem);
+  line-height:.92;letter-spacing:-.02em;
+  font-optical-sizing:auto;
+}
+.hero h1 .en{
+  display:block;font-style:italic;font-weight:400;
+  font-size:clamp(1.5rem,1rem + 3.4vw,4rem);
+  color:var(--crimson);letter-spacing:0;margin-top:.15em;
+}
+.hero .standfirst{
+  font-family:var(--serif-lat);font-size:clamp(1.1rem,.8rem + .9vw,1.5rem);
+  line-height:1.6;color:var(--ink-soft);max-width:44rem;margin-top:clamp(1.6rem,4vh,2.6rem);
+}
+.hero .standfirst b{color:var(--ink);font-weight:600}
+.hero-meta{
+  margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1.4rem 2.6rem;
+  font-family:var(--label);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+}
+.hero-meta span{display:flex;align-items:center;gap:.5rem}
+.hero-meta span::before{content:"";width:6px;height:6px;background:var(--ochre);border-radius:50%}
+.scrollcue{margin-top:3rem;display:inline-flex;align-items:center;gap:.6rem;font-family:var(--label);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.scrollcue .bar{width:34px;height:1px;background:var(--ink);position:relative;overflow:hidden}
+.scrollcue .bar::after{content:"";position:absolute;inset:0;background:var(--crimson);transform:translateX(-100%);animation:slide 2.2s var(--ease) infinite}
+@keyframes slide{0%{transform:translateX(-100%)}55%{transform:translateX(100%)}100%{transform:translateX(100%)}}
+
+/* big faint background glyph */
+.hero .ghost{
+  position:absolute;right:-2vw;bottom:-8vh;z-index:-1;
+  font-family:var(--display);font-weight:900;font-size:46vw;line-height:1;
+  color:var(--ink);opacity:.035;pointer-events:none;user-select:none;
+}
+
+/* ---------- layout ---------- */
+.layout{
+  display:grid;grid-template-columns:clamp(220px,22vw,290px) minmax(0,1fr);
+  align-items:start;max-width:84rem;margin:0 auto;
+}
+
+/* ---------- table of contents ---------- */
+.toc{
+  position:sticky;top:64px;align-self:start;
+  height:calc(100vh - 64px);overflow-y:auto;
+  padding:2.6rem 1.4rem 2rem clamp(1rem,3vw,2.4rem);
+  border-right:1px solid var(--line);
+}
+.toc h4{font-family:var(--label);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:1.2rem}
+.toc ol{list-style:none;counter-reset:toc}
+.toc li{counter-increment:toc}
+.toc a{
+  display:grid;grid-template-columns:1.9rem 1fr;align-items:baseline;
+  text-decoration:none;color:var(--ink-soft);padding:.34rem 0;
+  border-bottom:1px solid transparent;transition:color .2s,border-color .2s;line-height:1.3;
+}
+.toc a::before{content:counter(toc,decimal-leading-zero);font-family:var(--label);font-size:.62rem;letter-spacing:.05em;color:var(--ink-faint);transition:color .2s}
+.toc a .t{font-family:var(--serif-cjk);font-weight:500;font-size:.92rem}
+.toc a:hover{color:var(--crimson)}
+.toc a:hover::before{color:var(--crimson)}
+.toc a.active{color:var(--crimson)}
+.toc a.active::before{color:var(--crimson)}
+.toc a.active .t{font-weight:700}
+.toc a.active{border-left:2px solid var(--crimson);margin-left:-.7rem;padding-left:.7rem}
+.toc-backdrop{display:none}
+
+/* ---------- content column ---------- */
+.content{
+  padding:clamp(2.2rem,6vh,4.4rem) clamp(1.2rem,4vw,4rem) 2rem;
+  min-width:0;
+}
+.section{padding:clamp(2.6rem,7vh,5rem) 0;border-top:1px solid var(--line-soft)}
+.section:first-of-type{border-top:none;padding-top:clamp(1rem,3vh,2rem)}
+.wrap{max-width:var(--measure)}
+
+/* section headers */
+.sec-head{margin-bottom:clamp(1.6rem,4vh,2.6rem)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.7rem;
+  font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--crimson);
+  margin-bottom:1rem;
+}
+.eyebrow .num{color:var(--ink);background:var(--paper-3);border:1px solid var(--line);border-radius:2px;padding:.18rem .42rem;font-size:.62rem}
+.sec-title{font-family:var(--display);font-weight:900;font-size:clamp(2rem,1.4rem + 2.6vw,3.4rem);line-height:1.02;letter-spacing:-.01em}
+.sec-title .cjk{font-family:var(--serif-cjk);font-weight:900}
+.sec-title-en{display:block;font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.05rem,.9rem + .9vw,1.5rem);color:var(--ink-faint);margin-top:.35rem}
+
+/* prose */
+.prose p{margin:0 0 1.15em}
+.prose p + p{text-indent:0}
+.prose strong,.prose b{font-weight:600;color:var(--ink)}
+.prose em{font-style:italic}
+.prose a{color:var(--crimson);text-underline-offset:3px}
+.lede{font-size:1.18em;line-height:1.7;color:var(--ink-soft)}
+.lede strong{color:var(--ink)}
+
+/* drop cap */
+.dropcap::first-letter{
+  font-family:var(--display);font-weight:900;float:left;
+  font-size:4.4em;line-height:.78;padding:.06em .12em 0 0;color:var(--crimson);
+}
+
+/* key statement / definition box */
+.statement{
+  margin:1.8rem 0;padding:1.6rem 1.8rem;background:var(--paper-2);
+  border-left:4px solid var(--crimson);border-radius:2px;
+  font-family:var(--serif-cjk);
+}
+.statement .lab{font-family:var(--label);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--crimson);display:block;margin-bottom:.5rem}
+.statement p{font-size:1.16em;line-height:1.7;color:var(--ink);margin:0}
+
+/* pull quote */
+.pullquote{
+  margin:2.4rem 0;padding:0 0 0 1.4rem;border-left:2px solid var(--ochre);
+}
+.pullquote blockquote{font-family:var(--display);font-style:italic;font-weight:500;font-size:clamp(1.3rem,1rem + 1.4vw,2rem);line-height:1.35;color:var(--ink)}
+.pullquote .cjk{font-family:var(--serif-cjk);font-style:normal;font-weight:500}
+.pullquote cite{display:block;margin-top:.9rem;font-style:normal;font-family:var(--label);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.pullquote cite::before{content:"— "}
+
+/* note / nuance callout */
+.note{
+  margin:1.6rem 0;padding:1.1rem 1.3rem;background:transparent;border:1px dashed var(--line);border-radius:3px;
+  font-size:.96em;color:var(--ink-soft);
+}
+.note .tag{font-family:var(--label);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);font-weight:700;margin-right:.5rem}
+
+/* domain grid (what it wants to change) */
+.domains{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.8rem;border-radius:3px;overflow:hidden}
+.domain{background:var(--paper);padding:1.4rem 1.4rem 1.5rem;transition:background .25s}
+.domain:hover{background:var(--paper-2)}
+.domain .di{font-family:var(--display);font-weight:900;font-size:1.5rem;color:var(--crimson);line-height:1}
+.domain h4{font-family:var(--serif-cjk);font-weight:700;font-size:1.06rem;margin:.7rem 0 .2rem}
+.domain .en{font-family:var(--label);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:.55rem}
+.domain p{font-size:.92rem;line-height:1.6;color:var(--ink-soft);margin:0}
+
+/* target / critique chips */
+.targets{display:flex;flex-direction:column;gap:.9rem;margin-top:1.6rem}
+.target{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;padding:1rem 0;border-bottom:1px solid var(--line-soft)}
+.target:last-child{border-bottom:none}
+.target .badge{font-family:var(--label);font-weight:700;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper);background:var(--crimson-deep);padding:.4rem .55rem;border-radius:2px;white-space:nowrap;align-self:start}
+.target h4{font-family:var(--serif-cjk);font-weight:700;font-size:1.08rem;margin-bottom:.25rem}
+.target h4 .en{font-family:var(--label);font-weight:600;font-size:.66rem;letter-spacing:.08em;text-transform:none;color:var(--ink-faint);margin-left:.5rem}
+.target p{font-size:.95rem;color:var(--ink-soft);margin:0;line-height:1.6}
+
+/* path principles */
+.principles{counter-reset:pr;display:grid;gap:1.1rem;margin-top:1.6rem}
+.principle{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;counter-increment:pr;align-items:start}
+.principle::before{content:counter(pr,decimal-leading-zero);font-family:var(--display);font-weight:900;font-size:1.7rem;color:var(--ochre);line-height:1}
+.principle h4{font-family:var(--serif-cjk);font-weight:700;font-size:1.1rem;margin-bottom:.2rem}
+.principle h4 .en{font-family:var(--label);font-weight:600;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:.2rem}
+.principle p{font-size:.96rem;color:var(--ink-soft);margin:0}
+
+/* timeline (waves) */
+.timeline{margin-top:2rem;border-left:2px solid var(--line);padding-left:0}
+.wave{position:relative;padding:0 0 2.2rem 2.2rem}
+.wave:last-child{padding-bottom:.3rem}
+.wave::before{content:"";position:absolute;left:-7px;top:.4rem;width:12px;height:12px;border-radius:50%;background:var(--crimson);border:2px solid var(--paper);box-shadow:0 0 0 1px var(--crimson)}
+.wave .era{font-family:var(--label);font-weight:700;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre)}
+.wave h4{font-family:var(--display);font-weight:900;font-size:1.4rem;margin:.25rem 0 .15rem}
+.wave h4 .en{font-style:italic;font-weight:400;color:var(--crimson);font-size:1rem;margin-left:.5rem}
+.wave p{font-size:.97rem;color:var(--ink-soft);margin:.4rem 0 0}
+.wave .marks{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.wave .marks span{font-family:var(--label);font-size:.6rem;letter-spacing:.06em;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);border-radius:2px;padding:.25rem .55rem}
+
+/* schools grid */
+.schools{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:1.2rem;margin-top:1.8rem}
+.school{
+  background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow-sm);
+  padding:1.5rem 1.5rem 1.6rem;position:relative;overflow:hidden;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s;
+  border-top:4px solid var(--c,var(--crimson));
+}
+.school:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--c,var(--crimson))}
+.school .tag{font-family:var(--label);font-weight:700;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c,var(--crimson))}
+.school h4{font-family:var(--serif-cjk);font-weight:700;font-size:1.22rem;line-height:1.2;margin:.4rem 0 .1rem}
+.school .h-en{font-family:var(--display);font-style:italic;font-weight:400;font-size:.92rem;color:var(--ink-faint);display:block;margin-bottom:.9rem}
+.school dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .8rem;margin:0}
+.school dt{font-family:var(--label);font-weight:700;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);padding-top:.22em}
+.school dd{font-size:.9rem;line-height:1.5;color:var(--ink-soft);margin:0 0 .55rem}
+.school dd b{color:var(--ink);font-weight:600}
+
+/* thinkers */
+.thinkers{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:1.8rem}
+.thinker{background:var(--surface);padding:1.4rem;display:flex;flex-direction:column;gap:.5rem;transition:background .25s}
+.thinker:hover{background:var(--paper-2)}
+.thinker .yrs{font-family:var(--label);font-size:.6rem;letter-spacing:.1em;color:var(--crimson);font-weight:700}
+.thinker h4{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.15}
+.thinker .role{font-family:var(--serif-cjk);font-size:.86rem;color:var(--ink-faint);font-weight:500}
+.thinker p{font-size:.9rem;line-height:1.55;color:var(--ink-soft);margin:.2rem 0 0}
+.thinker .idea{font-family:var(--display);font-style:italic;font-size:.95rem;color:var(--ink);border-top:1px solid var(--line-soft);padding-top:.6rem;margin-top:auto}
+
+/* glossary */
+.glossary{columns:2;column-gap:2.4rem;margin-top:1.8rem}
+.term{break-inside:avoid;margin-bottom:1.4rem;padding-bottom:1.2rem;border-bottom:1px solid var(--line-soft)}
+.term h4{font-family:var(--serif-cjk);font-weight:700;font-size:1.05rem;margin-bottom:.1rem}
+.term .en{font-family:var(--label);font-weight:600;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);display:block;margin-bottom:.4rem}
+.term p{font-size:.92rem;line-height:1.58;color:var(--ink-soft);margin:0}
+
+/* debates two-col */
+.debate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:1.8rem}
+.debate-col{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1.4rem 1.5rem}
+.debate-col > h3{font-family:var(--display);font-weight:900;font-size:1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.debate-col > h3 .dot{width:9px;height:9px;border-radius:50%}
+.debate-item{margin-bottom:1.1rem}
+.debate-item:last-child{margin-bottom:0}
+.debate-item h5{font-family:var(--serif-cjk);font-weight:700;font-size:.98rem;margin-bottom:.25rem}
+.debate-item p{font-size:.9rem;line-height:1.55;color:var(--ink-soft);margin:0}
+
+/* misconceptions */
+.myths{display:grid;gap:1rem;margin-top:1.8rem}
+.myth{display:grid;grid-template-columns:auto 1fr;gap:1rem;background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.myth .m-x{display:flex;align-items:center;justify-content:center;background:var(--crimson-deep);color:var(--paper);font-family:var(--display);font-weight:900;font-size:1.5rem;padding:0 1.1rem}
+.myth .m-body{padding:1.1rem 1.3rem 1.2rem}
+.myth .m-claim{font-family:var(--serif-cjk);font-weight:700;font-size:1.02rem;color:var(--ink)}
+.myth .m-claim .lab{font-family:var(--label);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crimson);display:block;margin-bottom:.2rem;font-weight:700}
+.myth .m-real{font-size:.93rem;line-height:1.6;color:var(--ink-soft);margin-top:.6rem;padding-top:.6rem;border-top:1px solid var(--line-soft)}
+.myth .m-real .lab{font-family:var(--label);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.2rem;font-weight:700}
+
+/* references */
+.refs{margin-top:1.8rem;border-top:1px solid var(--line)}
+.ref{padding:1.4rem 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:baseline}
+.ref .yr{font-family:var(--display);font-weight:900;font-size:1.05rem;color:var(--ochre)}
+.ref .meta{min-width:0}
+.ref .title{font-family:var(--display);font-style:italic;font-weight:600;font-size:1.05rem;color:var(--ink)}
+.ref .author{font-family:var(--serif-lat);font-size:.92rem;color:var(--ink-soft)}
+.ref .prov{font-family:var(--label);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-top:.35rem;display:block}
+.ref .gloss{font-size:.92rem;line-height:1.55;color:var(--ink-soft);margin-top:.5rem}
+
+/* ---------- sub-sections (used inside China chapter) ---------- */
+.subhead{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin:3rem 0 0;padding-top:1.7rem;border-top:1px solid var(--line)}
+.subhead .cjk{font-family:var(--serif-cjk);font-weight:700;font-size:1.32rem;color:var(--ink);letter-spacing:.01em}
+.subhead .sub-en{font-family:var(--display);font-style:italic;font-weight:400;font-size:.96rem;color:var(--crimson)}
+.subnote{font-size:.96rem;line-height:1.7;color:var(--ink-soft);margin-top:1rem;max-width:var(--measure)}
+.subnote strong{color:var(--ink);font-weight:600}
+
+/* case cards */
+.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:1.4rem}
+.case{background:var(--paper);padding:1.4rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.45rem;transition:background .25s}
+.case:hover{background:var(--paper-2)}
+.case .cyr{font-family:var(--label);font-weight:700;font-size:.6rem;letter-spacing:.14em;color:var(--crimson)}
+.case h4{font-family:var(--serif-cjk);font-weight:700;font-size:1.1rem;line-height:1.25;margin:0}
+.case .c-en{font-family:var(--label);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:.1rem}
+.case p{font-size:.92rem;line-height:1.6;color:var(--ink-soft);margin:.3rem 0 0}
+.case .c-tag{font-family:var(--label);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);font-weight:700;border-top:1px solid var(--line-soft);padding-top:.55rem;margin-top:auto}
+
+/* data stat cards */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-top:1.4rem}
+.stat{background:var(--surface);padding:1.4rem 1.3rem 1.45rem;transition:background .25s}
+.stat:hover{background:var(--paper-2)}
+.stat .fig{font-family:var(--display);font-weight:900;font-size:2.15rem;line-height:1;color:var(--crimson);display:flex;align-items:baseline;gap:.18em}
+.stat .fig .u{font-size:.9rem;font-weight:600;color:var(--ink-soft)}
+.stat .k{font-family:var(--serif-cjk);font-weight:700;font-size:.96rem;color:var(--ink);margin:.6rem 0 .15rem;line-height:1.3}
+.stat .k .en{font-family:var(--label);font-weight:600;font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-top:.15rem}
+.stat .src{font-family:var(--label);font-size:.55rem;letter-spacing:.06em;color:var(--ink-faint);line-height:1.45;display:block;margin-top:.5rem}
+.stat .trend{font-size:.82rem;color:var(--ink-soft);margin-top:.3rem;line-height:1.4}
+
+/* ---------- irreconcilable fractures (faction-conflict chapter) ---------- */
+.fx-intro{font-size:1.05em;line-height:1.75;color:var(--ink-soft);max-width:var(--measure)}
+.fx-intro strong{color:var(--ink);font-weight:600}
+.fractures{display:flex;flex-direction:column;gap:1.7rem;margin-top:2rem}
+.fracture{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow-md)}
+.fx-head{display:flex;align-items:baseline;gap:.85rem;padding:1.15rem 1.5rem;background:var(--paper-3);border-bottom:1px solid var(--line)}
+.fx-head .fx-n{font-family:var(--display);font-weight:900;font-size:1.7rem;color:var(--crimson);line-height:.9}
+.fx-head .fx-t{font-family:var(--serif-cjk);font-weight:700;font-size:1.14rem;color:var(--ink);line-height:1.3}
+.fx-head .fx-t .en{display:block;font-family:var(--display);font-style:italic;font-weight:400;font-size:.86rem;color:var(--ink-faint);margin-top:.18rem}
+.fx-poles{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.pole{background:var(--paper);padding:1.25rem 1.4rem}
+.pole .p-lab{font-family:var(--label);font-weight:700;font-size:.57rem;letter-spacing:.13em;text-transform:uppercase;display:inline-block;margin-bottom:.6rem;padding:.22rem .55rem;border-radius:2px;color:var(--paper)}
+.pole.a .p-lab{background:var(--crimson)}
+.pole.b .p-lab{background:var(--teal)}
+.pole h5{font-family:var(--serif-cjk);font-weight:700;font-size:.98rem;color:var(--ink);margin:0 0 .35rem}
+.pole p{font-size:.92rem;line-height:1.64;color:var(--ink-soft);margin:0}
+.fx-why{padding:1.05rem 1.5rem;background:var(--paper-2);border-top:1px solid var(--line);font-size:.93rem;line-height:1.64;color:var(--ink-soft)}
+.fx-why .lab{font-family:var(--label);font-size:.57rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ochre);font-weight:700;margin-right:.55rem}
+.fx-why b{color:var(--ink);font-weight:600}
+.fx-ask{padding:1.2rem 1.5rem;background:var(--crimson-deep)}
+.fx-ask .lab{font-family:var(--label);font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(252,251,249,.66);font-weight:700;display:block;margin-bottom:.5rem}
+.fx-ask p{font-family:var(--serif-cjk);font-size:1.02rem;line-height:1.62;margin:0;color:#FBFAF7}
+.fx-ask p b{color:var(--ochre-soft);font-weight:700}
+
+/* closing mirror */
+.mirror{margin-top:2rem;border:1.5px solid var(--crimson);border-radius:12px;background:var(--surface);padding:clamp(1.5rem,4vw,2.2rem);box-shadow:var(--shadow-md)}
+.mirror h4{font-family:var(--label);font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--crimson);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+.mirror h4 .en{font-family:var(--display);font-style:italic;font-weight:400;font-size:.92rem;letter-spacing:0;text-transform:none;color:var(--ink-faint)}
+.mirror p{font-size:1.02em;line-height:1.78;color:var(--ink-soft);margin:0 0 1rem}
+.mirror p strong{color:var(--ink);font-weight:600}
+.mirror ol{counter-reset:m;list-style:none;margin:1.2rem 0;padding:0;display:flex;flex-direction:column;gap:.9rem}
+.mirror ol li{counter-increment:m;position:relative;padding-left:2.6rem;font-family:var(--serif-cjk);font-size:1.02rem;line-height:1.6;color:var(--ink)}
+.mirror ol li::before{content:counter(m);position:absolute;left:0;top:-.1rem;width:1.7rem;height:1.7rem;border:1.5px solid var(--crimson);border-radius:50%;color:var(--crimson);font-family:var(--display);font-weight:900;font-size:.92rem;display:flex;align-items:center;justify-content:center}
+.mirror .kicker{font-family:var(--display);font-style:italic;font-size:1.08em;color:var(--ink);border-top:1px solid var(--line);padding-top:1.1rem;margin-top:1.1rem;margin-bottom:0}
+
+/* fracture thinker-quote band */
+.fx-quote{padding:1.05rem 1.5rem;background:var(--paper-2);border-top:1px solid var(--line);display:flex;gap:.85rem;align-items:flex-start}
+.fx-quote .q-mark{font-family:var(--display);font-size:1.7rem;line-height:.7;color:var(--ochre);flex:none;margin-top:.15rem}
+.fx-quote blockquote{margin:0;font-family:var(--display);font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--ink)}
+.fx-quote cite{display:block;margin-top:.5rem;font-style:normal;font-family:var(--label);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.fx-quote cite .side{color:var(--crimson);margin-left:.45rem;font-weight:700}
+
+/* original SVG figures */
+.figure{margin:2rem 0 .5rem;max-width:var(--measure)}
+.figure-wide{max-width:760px}
+.figure svg{width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.15rem 1rem;box-shadow:var(--shadow-sm)}
+.fig-cap{font-family:var(--serif-lat);font-size:.86rem;line-height:1.55;color:var(--ink-soft);margin-top:.7rem;padding-left:.9rem;border-left:3px solid var(--ochre)}
+.fig-cap strong{color:var(--ink);font-weight:600}
+.fig-cap .fc-en{display:block;font-family:var(--label);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-top:.3rem}
+@media (prefers-reduced-motion:reduce){.figure svg animate,.figure svg animateTransform{display:none}}
+
+/* historical portraits (real public-domain images, online-loaded with graceful fallback) */
+.portrait{margin:1.8rem auto;max-width:300px}
+.portrait.left{margin-left:0}
+.portrait-frame{position:relative;min-height:140px;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center}
+.portrait-frame img{width:100%;height:auto;display:block}
+.portrait-fallback{display:none;font-family:var(--label);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);text-align:center;padding:2.4rem 1.4rem;line-height:1.7}
+.portrait-frame.noimg{min-height:180px}
+.portrait-frame.noimg .portrait-fallback{display:block}
+.portrait figcaption{font-family:var(--label);font-size:.64rem;letter-spacing:.05em;line-height:1.65;color:var(--ink-faint);margin-top:.65rem;padding-left:.8rem;border-left:3px solid var(--ochre)}
+.portrait figcaption b{font-family:var(--serif-cjk);font-size:.84rem;letter-spacing:0;color:var(--ink);font-weight:700}
+.portrait figcaption .src{display:block;margin-top:.25rem;color:var(--ink-faint)}
+@media (max-width:680px){.portrait{max-width:240px}}
+
+/* ---------- interactive self-test (the mirror quiz) ---------- */
+.quiz{margin-top:1.6rem;border:1px solid var(--line);border-radius:6px;background:var(--paper);overflow:hidden}
+.quiz-bar{height:4px;background:var(--paper-3);position:relative}
+.quiz-bar i{position:absolute;inset:0 100% 0 0;background:linear-gradient(90deg,var(--crimson),var(--ochre));transition:right .4s var(--ease)}
+.quiz-body{padding:1.5rem 1.5rem 1.7rem}
+.q-step{font-family:var(--label);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem}
+.q-step .q-skip{color:var(--crimson);cursor:pointer;border:none;background:none;font:inherit;letter-spacing:.12em;padding:0}
+.q-step .q-skip:hover{text-decoration:underline}
+.q-text{font-family:var(--serif-cjk);font-weight:700;font-size:1.12rem;line-height:1.5;color:var(--ink);margin-bottom:1.1rem}
+.q-opts{display:flex;flex-direction:column;gap:.7rem}
+.q-opt{text-align:left;font-family:var(--serif-cjk);font-size:.98rem;line-height:1.5;color:var(--ink-soft);background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:.85rem 1rem;cursor:pointer;transition:border-color .18s,background .18s,transform .18s}
+.q-opt:hover{border-color:var(--crimson);background:var(--paper-3);transform:translateX(3px)}
+.q-opt b{color:var(--ink);font-weight:700}
+.q-nav{margin-top:1.1rem;display:flex;justify-content:space-between;align-items:center}
+.q-back{font-family:var(--label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);background:none;border:none;cursor:pointer;padding:0}
+.q-back:hover{color:var(--ink)}
+.q-back[disabled]{opacity:.35;cursor:default}
+
+/* result panel */
+.q-result{padding:1.6rem 1.5rem 1.8rem}
+.q-result .r-eyebrow{font-family:var(--label);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:.5rem}
+.q-result h3{font-family:var(--display);font-weight:900;font-size:1.7rem;line-height:1.1;color:var(--ink);margin:0 0 .1rem}
+.q-result h3 .r-en{display:block;font-family:var(--display);font-style:italic;font-weight:400;font-size:.95rem;color:var(--ink-faint);margin-top:.2rem}
+.q-result .r-lead{font-size:1rem;line-height:1.7;color:var(--ink-soft);margin:1rem 0}
+.q-result .r-lead b{color:var(--ink);font-weight:600}
+.r-bars{display:flex;flex-direction:column;gap:.55rem;margin:1.2rem 0}
+.r-row{display:grid;grid-template-columns:8.5rem 1fr 2.7rem;gap:.7rem;align-items:center;font-family:var(--label);font-size:.72rem;letter-spacing:.04em;color:var(--ink-soft)}
+.r-row .r-track{background:var(--paper-3);border-radius:3px;height:13px;overflow:hidden;min-width:0}
+.r-row .r-fill{display:block;height:100%;background:var(--crimson);width:0;border-radius:3px;transition:width .85s var(--ease)}
+.r-row.top .r-fill{background:linear-gradient(90deg,var(--crimson),var(--ochre))}
+.r-row.top{color:var(--ink);font-weight:700}
+.r-row .r-pct{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-faint)}
+.r-row.top .r-pct{color:var(--crimson);font-weight:700}
+.r-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:5px;overflow:hidden;margin:1.2rem 0}
+.r-cell{background:var(--paper);padding:.95rem 1.1rem}
+.r-cell h6{font-family:var(--label);font-size:.57rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre);margin:0 0 .4rem;font-weight:700}
+.r-cell p{font-size:.92rem;line-height:1.55;color:var(--ink-soft);margin:0}
+.r-quote{font-family:var(--display);font-style:italic;font-size:1.05rem;line-height:1.5;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0;margin:1.2rem 0}
+.r-quote cite{display:block;font-style:normal;font-family:var(--label);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-top:.5rem}
+.q-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.2rem}
+.q-btn{font-family:var(--label);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:.6rem 1rem;border-radius:3px;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:opacity .2s}
+.q-btn:hover{opacity:.82}
+.q-btn.ghost{background:none;color:var(--ink)}
+.q-btn.ghost:hover{background:var(--paper-3);opacity:1}
+.r-caveat{font-size:.84rem;line-height:1.55;color:var(--ink-faint);margin-top:1.1rem;font-style:italic}
+
+/* result compass */
+.compass{margin:1.2rem 0;display:flex;justify-content:center}
+.compass svg{width:100%;max-width:340px;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-sm)}
+.compass .dot{filter:drop-shadow(0 2px 4px rgba(108,16,32,.5))}
+
+/* shareable result card */
+.share-out{margin-top:1.5rem;border-top:1px dashed var(--line);padding-top:1.4rem}
+.share-out[hidden]{display:none}
+.share-wait{font-family:var(--serif-cjk);font-size:.95rem;color:var(--ink-faint);text-align:center;padding:1.1rem 0}
+.share-card-wrap{display:flex;justify-content:center;margin-bottom:1rem}
+.share-card-img{width:100%;max-width:340px;height:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow-lg);display:block}
+.share-hint{font-size:.88rem;line-height:1.62;color:var(--ink-soft);text-align:center;margin:.2rem auto 1.1rem;max-width:31rem}
+.share-hint b{color:var(--ink);font-weight:600}
+.share-btns{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center}
+
+@media (max-width:680px){
+  .r-row{grid-template-columns:6rem 1fr 2.3rem}
+  .r-grid{grid-template-columns:1fr}
+}
+
+/* footer */
+.site-footer{border-top:2px solid var(--ink);margin-top:1rem;padding:clamp(2.4rem,6vh,4rem) clamp(1.2rem,4vw,4rem) 3rem}
+.foot-inner{max-width:var(--measure)}
+.site-footer .about{background:var(--paper-2);border:1px solid var(--line);border-radius:4px;padding:1.5rem 1.7rem;font-size:.94rem;line-height:1.7;color:var(--ink-soft)}
+.site-footer .about h4{font-family:var(--label);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--crimson);margin-bottom:.7rem}
+.site-footer .colophon{margin-top:2rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:baseline;font-family:var(--label);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.site-footer .colophon .mk{font-family:var(--display);font-weight:900;font-size:1.1rem;letter-spacing:0;text-transform:none;color:var(--ink)}
+.backtop{color:var(--crimson);text-decoration:none;border:1px solid var(--line);border-radius:2px;padding:.45rem .8rem;transition:background .2s}
+.backtop:hover{background:var(--paper-3)}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .toc-toggle{display:inline-flex}
+  .here{display:none}
+  .toc{
+    position:fixed;top:0;left:0;height:100dvh;width:min(82vw,340px);z-index:1100;
+    background:var(--paper);border-right:1px solid var(--line);
+    transform:translateX(-105%);transition:transform .35s var(--ease);
+    box-shadow:20px 0 60px -30px rgba(0,0,0,.5);padding-top:4.5rem;
+  }
+  .toc.open{transform:none}
+  .toc-backdrop{display:block;position:fixed;inset:0;z-index:1050;background:rgba(34,28,22,.45);opacity:0;visibility:hidden;transition:opacity .3s}
+  .toc-backdrop.show{opacity:1;visibility:visible}
+}
+@media (max-width:680px){
+  .glossary{columns:1}
+  .debate-grid{grid-template-columns:1fr}
+  .target{grid-template-columns:1fr;gap:.4rem}
+  .principle{grid-template-columns:1fr;gap:.3rem}
+  .principle::before{font-size:1.3rem}
+  .hero .ghost{font-size:70vw;bottom:-4vh}
+  .subhead .cjk{font-size:1.18rem}
+  .stat .fig{font-size:1.9rem}
+  .fx-poles{grid-template-columns:1fr}
+}
+
+::selection{background:var(--crimson);color:var(--paper)}
+.toc::-webkit-scrollbar{width:8px}
+.toc::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+
+/* ============================================================
+   ADDED — thinker portraits & video facade (multimedia layer)
+   ============================================================ */
+.thinker{align-items:flex-start}
+.thinker-portrait{position:relative;width:92px;height:92px;border-radius:50%;overflow:hidden;flex:0 0 auto;border:1px solid var(--line);box-shadow:var(--shadow-sm);background:var(--paper-2)}
+.thinker-portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+.thinker-portrait .tp-mono{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:1.6rem;letter-spacing:.02em;color:var(--ochre);background:linear-gradient(135deg,var(--paper-2),var(--paper-3))}
+.thinker:hover .thinker-portrait{box-shadow:var(--shadow-md)}
+
+.video{margin:2.2rem 0 .6rem;max-width:var(--measure)}
+.video .vid{position:relative;display:block;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;background:#1E1C19;box-shadow:var(--shadow-md);text-align:left;padding:0;margin:0;font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+.video .vid-bg{position:absolute;inset:0;background:radial-gradient(120% 120% at 82% 6%,rgba(174,124,36,.30),transparent 55%),radial-gradient(120% 120% at 6% 100%,rgba(154,27,48,.42),transparent 55%),linear-gradient(135deg,#2C2620,#1A1815)}
+.video .vid-bg::after{content:"\201C";position:absolute;top:-.16em;left:.1em;font-family:var(--display);font-weight:900;font-size:13rem;line-height:1;color:rgba(252,251,249,.06)}
+.video .vid-play{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);transition:transform .3s var(--ease);filter:drop-shadow(0 6px 16px rgba(0,0,0,.4))}
+.video .vid:hover .vid-play,.video .vid:focus-visible .vid-play{transform:translate(-50%,-50%) scale(1.09)}
+.video .vid-meta{position:absolute;left:0;right:0;bottom:0;display:flex;flex-direction:column;gap:.22rem;padding:2.8rem 1.3rem 1.15rem;background:linear-gradient(0deg,rgba(18,16,14,.93),rgba(18,16,14,.55) 55%,transparent)}
+.video .vid-tag{font-family:var(--label);font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ochre-soft)}
+.video .vid-tag sup{letter-spacing:0}
+.video .vid-title{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,.7rem + 1.2vw,1.5rem);line-height:1.12;color:#FCFBF9}
+.video .vid-by{font-family:var(--label);font-size:.66rem;letter-spacing:.05em;color:rgba(252,251,249,.72)}
+.video .vid-emb{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:12px;box-shadow:var(--shadow-md);background:#000}
+.video figcaption a{color:var(--crimson);text-decoration:none;border-bottom:1px solid rgba(154,27,48,.35);transition:border-color .2s}
+.video figcaption a:hover{border-color:var(--crimson)}
+@media (prefers-reduced-motion:reduce){.video .vid-play{transition:none}}
+
+/* documentary photo (landscape) */
+.photo{margin:2rem 0 .6rem;max-width:var(--measure)}
+.photo .photo-frame{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);background:var(--paper-2);min-height:90px}
+.photo .photo-frame img{width:100%;height:auto;display:block}
+.photo .ph-fallback{display:none;font-family:var(--label);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);text-align:center;padding:2rem 1.2rem;line-height:1.7}
+.photo .photo-frame.noimg{min-height:140px}
+.photo .photo-frame.noimg .ph-fallback{display:block}
+.photo figcaption{font-family:var(--serif-lat);font-size:.84rem;line-height:1.55;color:var(--ink-soft);margin-top:.7rem;padding-left:.9rem;border-left:3px solid var(--ochre)}
+.photo figcaption b{color:var(--ink);font-weight:600;font-family:var(--serif-cjk)}
+.photo figcaption .src{display:block;font-family:var(--label);font-size:.58rem;letter-spacing:.03em;color:var(--ink-faint);margin-top:.3rem}
+
+/* face gallery — diverse voices */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:1rem;margin:1.5rem 0 .4rem}
+.gallery figure{margin:0;display:flex;flex-direction:column;gap:.5rem}
+.gallery .g-frame{position:relative;aspect-ratio:3/4;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);background:var(--paper-2)}
+.gallery .g-frame img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+.gallery .g-mono{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:1.5rem;color:var(--ochre);background:linear-gradient(135deg,var(--paper-2),var(--paper-3))}
+.gallery figure:hover .g-frame{box-shadow:var(--shadow-md)}
+.gallery figcaption{font-family:var(--label);font-size:.62rem;line-height:1.42;color:var(--ink-faint)}
+.gallery figcaption b{display:block;font-family:var(--serif-cjk);font-size:.82rem;color:var(--ink);font-weight:700;letter-spacing:0;margin-bottom:.12rem}
+.gallery figcaption .g-en{color:var(--crimson);font-size:.56rem;letter-spacing:.04em}
+
+/* ---------- spoken-word panel beside the Adichie video ---------- */
+.wrap-wide{max-width:min(100%,66rem)}
+.spoken{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(1.1rem,2.4vw,2.2rem);align-items:start;margin-top:.3rem}
+.spoken .sw-video{margin:0;max-width:none}
+.spoken .sw-video .fig-cap{font-size:1.18rem;line-height:1.64;color:var(--ink)}
+.spoken .sw-video .fig-cap .fc-en{font-size:.78rem;letter-spacing:.04em}
+.spoken-words{position:relative;display:flex;flex-direction:column;overflow:hidden;background:radial-gradient(120% 70% at 100% 0,rgba(174,124,36,.07),transparent 60%),var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-md);padding:1.2rem 1.3rem}
+.spoken-words::before{content:"\201C";position:absolute;top:-1.7rem;right:.25rem;font-family:var(--display);font-weight:900;font-size:9rem;line-height:1;color:rgba(154,27,48,.06);pointer-events:none}
+.sw-eyebrow{display:flex;align-items:center;gap:.6rem;font-family:var(--label);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:.85rem;flex:0 0 auto}
+.sw-eyebrow em{font-style:normal;color:var(--ink-faint);letter-spacing:.14em}
+.sw-eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(174,124,36,.55),transparent)}
+.sw-scroll{overflow-y:auto;max-height:clamp(320px,50vh,470px);padding-right:.55rem;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(180deg,transparent 0,#000 14px,#000 calc(100% - 16px),transparent 100%)}
+.sw-scroll::-webkit-scrollbar{width:6px}
+.sw-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.sw-scroll::-webkit-scrollbar-thumb:hover{background:var(--ink-faint)}
+.sw-stanza{margin:0 0 .9rem}
+.sw-line{margin:0 0 .5rem}
+.sw-line .en{display:block;font-family:var(--serif-lat);font-style:italic;font-size:.85rem;line-height:1.3;color:var(--ink-faint);letter-spacing:.005em}
+.sw-line .zh{display:block;font-family:var(--serif-cjk);font-size:.98rem;line-height:1.5;color:var(--ink)}
+.sw-def{margin:.5rem 0 1rem;padding:.85rem 1rem;border-radius:10px;background:linear-gradient(135deg,rgba(154,27,48,.08),rgba(174,124,36,.06));border:1px solid rgba(154,27,48,.2)}
+.sw-def .en{font-style:italic;font-weight:600;color:var(--crimson);font-size:.9rem;margin-bottom:.15rem}
+.sw-def .zh{font-weight:600;color:var(--crimson-deep);font-size:1.05rem}
+.sw-hook{margin:.2rem 0 .3rem;text-align:center}
+.sw-hook .sw-line{margin-bottom:.25rem}
+.sw-hook .en{font-family:var(--display);font-style:italic;font-weight:600;font-size:1.28rem;color:var(--ochre);line-height:1.18}
+.sw-hook .zh{font-family:var(--serif-cjk);font-size:.9rem;color:var(--ochre);opacity:.92}
+.sw-credit{flex:0 0 auto;margin-top:.85rem;padding-top:.8rem;border-top:1px solid var(--line-soft);font-family:var(--label);font-size:.6rem;letter-spacing:.03em;color:var(--ink-faint);text-align:right}
+@media (max-width:880px){
+  .spoken{grid-template-columns:1fr;gap:1.4rem}
+  .sw-scroll{max-height:none;mask-image:none}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a href="#top" class="wordmark">
+    <span class="mk-cn cjk">女性主义</span>
+    <span class="mk-en">Feminism</span>
+  </a>
+  <div class="header-right">
+    <span class="here" id="here">序言 · Preface</span>
+    <button class="toc-toggle" id="tocToggle" aria-label="打开目录">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      目录
+    </button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <span class="ghost cjk" aria-hidden="true">女</span>
+  <div class="hero-inner reveal">
+    <div class="kicker">一部思想地图 · A Map of Ideas</div>
+    <h1>女性主义<span class="en">Feminism</span></h1>
+    <p class="standfirst">它不是一句口号，也不是单一的学说，而是一个<b>内部充满分歧与辩论的思想家族</b>。本站为你梳理：它如何定义自身、想改变什么、批判谁、指向何方，它的各个流派、关键思想家、核心概念，以及它内部的争论与外界的批评。</p>
+    <div class="hero-meta">
+      <span>13 个章节</span>
+      <span>11 个主要流派</span>
+      <span>定义 · 主张 · 争论</span>
+      <span>中英对照</span>
+    </div>
+    <div class="scrollcue">向下阅读 Scroll<span class="bar"></span></div>
+  </div>
+</section>
+
+<div class="layout">
+  <!-- ===================== TOC ===================== -->
+  <aside class="toc" id="toc">
+    <h4>目录 Contents</h4>
+    <nav>
+      <ol>
+        <li><a href="#define"><span class="t cjk">何谓女性主义</span></a></li>
+        <li><a href="#change"><span class="t cjk">它想改变什么</span></a></li>
+        <li><a href="#critique"><span class="t cjk">它批判的对象</span></a></li>
+        <li><a href="#path"><span class="t cjk">它指出的路</span></a></li>
+        <li><a href="#waves"><span class="t cjk">历史的四次浪潮</span></a></li>
+        <li><a href="#schools"><span class="t cjk">主要流派</span></a></li>
+        <li><a href="#thinkers"><span class="t cjk">关键思想家</span></a></li>
+        <li><a href="#glossary"><span class="t cjk">核心概念辞典</span></a></li>
+        <li><a href="#debates"><span class="t cjk">争论与批评</span></a></li>
+        <li><a href="#fractures"><span class="t cjk">不可调和的矛盾</span></a></li>
+        <li><a href="#china"><span class="t cjk">女性主义在中国</span></a></li>
+        <li><a href="#myths"><span class="t cjk">常见误解</span></a></li>
+        <li><a href="#reading"><span class="t cjk">延伸阅读</span></a></li>
+      </ol>
+    </nav>
+  </aside>
+  <div class="toc-backdrop" id="tocBackdrop" aria-hidden="true"></div>
+
+  <!-- ===================== CONTENT ===================== -->
+  <main class="content">
+
+    <!-- 01 DEFINITION -->
+    <section class="section" id="define">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">01</span> Definition</div>
+          <h2 class="sec-title"><span class="cjk">何谓女性主义</span><span class="sec-title-en">What Is Feminism</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk dropcap">女性主义（Feminism）是一系列<strong>社会运动、政治主张与思想理论</strong>的总称。把它们联系在一起的，是一个共同的核心：主张性别之间在政治、经济、社会与文化上的平等，并致力于消除一切<strong>基于性别的压迫与不公</strong>。</p>
+          <p class="cjk">关键在于"一系列"三个字。世界上不存在某一本"女性主义圣经"，也没有一位"女性主义教皇"。它更像一座有许多房间的大宅：自由派、激进派、马克思主义派、交叉性派……彼此共享一个客厅（性别平等的关切），却在"问题的根源是什么""该怎么办"上激烈争论。理解这一点，是看懂后面一切内容的前提——<strong>当有人说"女性主义认为……"时，往往只是其中某一派的观点，而非全部。</strong></p>
+          <div class="statement">
+            <span class="lab cjk">一个被广泛引用的简明定义</span>
+            <p class="cjk">"女性主义是一场旨在终结性别主义、性别剥削与压迫的运动。"</p>
+          </div>
+          <p class="cjk">这句话出自学者 bell hooks。请特别注意它的措辞：它要终结的是<strong>"性别主义"（sexism）这一观念与制度</strong>，而不是"男性"这一群体。把女性主义等同于"反对男性"，是最常见、也最根本的误读——我们会在最后一章专门澄清。</p>
+          <div class="note cjk"><span class="tag">译名</span>在中文里，<strong>feminism</strong> 既被译为"女权主义"，也被译为"女性主义"。两者指向同一个英文词，但语感不同："女权"突出权利与抗争，听感更锋利；"女性"突出性别视角与文化分析，更中性。学术写作中多用"女性主义"作为通用译名，本站也采用这一译法，但二者并无对错之分。</div>
+          <p class="cjk">最后一个常被混淆的区分：女性主义关注的是<strong>性别（gender）</strong>，而不只是"女性"。它分析的是整套性别秩序如何分配权力——这套秩序同样会规训和伤害男性（例如"男儿有泪不轻弹"对男性情感的压抑）。因此，越来越多流派强调：女性主义的终极目标，是让<strong>所有人都不因性别而被束缚</strong>。</p>
+        </div>
+      </div>
+      <div class="wrap-wide reveal">
+        <div class="spoken">
+          <figure class="video sw-video">
+            <button class="vid" type="button" data-yt="hg3umXU_qWc" aria-label="播放视频：我们都该是女性主义者 — Chimamanda Ngozi Adichie">
+              <span class="vid-bg" aria-hidden="true"></span>
+              <span class="vid-play" aria-hidden="true"><svg width="62" height="62" viewBox="0 0 64 64" role="img" aria-label="播放"><circle cx="32" cy="32" r="31" fill="rgba(252,251,249,.94)" stroke="#9A1B30" stroke-width="1.6"/><path d="M26 20.5 L46 32 L26 43.5 Z" fill="#9A1B30"/></svg></span>
+              <span class="vid-meta">
+                <span class="vid-tag">TED<sup>x</sup> · 演讲 Talk</span>
+                <span class="vid-title cjk">我们都该是女性主义者</span>
+                <span class="vid-by">Chimamanda Ngozi Adichie · TEDxEuston, 2012</span>
+              </span>
+            </button>
+            <figcaption class="fig-cap cjk">尼日利亚作家阿迪契用故事把"女性主义者"还原成一个人人都能认领的身份——这正是本章的核心。这段话后来被碧昂丝采样进歌曲《***Flawless》，传遍世界（右栏即采样的原话）。<span class="fc-en"><a href="https://youtu.be/hg3umXU_qWc" target="_blank" rel="noopener">在 YouTube 观看 ↗ · 若内嵌无法播放请点此</a></span></figcaption>
+          </figure>
+          <aside class="spoken-words">
+            <div class="sw-eyebrow"><span>原声采样</span><em>Sampled into «Flawless»</em></div>
+            <div class="sw-scroll">
+              <div class="sw-stanza">
+                <p class="sw-line"><span class="en">We teach girls to shrink themselves,</span><span class="zh cjk">我们教女孩把自己缩小，</span></p>
+                <p class="sw-line"><span class="en">to make themselves smaller.</span><span class="zh cjk">让自己变得更小、更不显眼。</span></p>
+              </div>
+              <div class="sw-stanza">
+                <p class="sw-line"><span class="en">We say to girls:</span><span class="zh cjk">我们对女孩说：</span></p>
+                <p class="sw-line"><span class="en">You can have ambition, but not too much.</span><span class="zh cjk">你可以有野心，但不能太多。</span></p>
+                <p class="sw-line"><span class="en">You should aim to be successful, but not too successful,</span><span class="zh cjk">你应该努力成功，但不能太成功，</span></p>
+                <p class="sw-line"><span class="en">otherwise you will threaten the man.</span><span class="zh cjk">否则你就会威胁到男人。</span></p>
+              </div>
+              <div class="sw-stanza">
+                <p class="sw-line"><span class="en">Because I am female,</span><span class="zh cjk">因为我是女性，</span></p>
+                <p class="sw-line"><span class="en">I am expected to aspire to marriage.</span><span class="zh cjk">别人便期待我把婚姻当成人生目标。</span></p>
+                <p class="sw-line"><span class="en">I am expected to make my life choices</span><span class="zh cjk">期待我在做人生选择时，</span></p>
+                <p class="sw-line"><span class="en">always keeping in mind that marriage is the most important.</span><span class="zh cjk">永远记住：婚姻才是最重要的。</span></p>
+              </div>
+              <div class="sw-stanza">
+                <p class="sw-line"><span class="en">Now, marriage can be a source of joy and love and mutual support.</span><span class="zh cjk">婚姻当然可以是快乐、爱与彼此支持的来源。</span></p>
+                <p class="sw-line"><span class="en">But why do we teach girls to aspire to marriage,</span><span class="zh cjk">但为什么我们教女孩向往婚姻，</span></p>
+                <p class="sw-line"><span class="en">and we don't teach boys the same?</span><span class="zh cjk">却不这样教男孩呢？</span></p>
+              </div>
+              <div class="sw-stanza">
+                <p class="sw-line"><span class="en">We raise girls to see each other as competitors —</span><span class="zh cjk">我们把女孩养成彼此的竞争者——</span></p>
+                <p class="sw-line"><span class="en">not for jobs or for accomplishments,</span><span class="zh cjk">不是为了工作，也不是为了成就，</span></p>
+                <p class="sw-line"><span class="en">which I think can be a good thing,</span><span class="zh cjk">（这些我倒认为本可以是好事，）</span></p>
+                <p class="sw-line"><span class="en">but for the attention of men.</span><span class="zh cjk">而是为了争夺男人的注意力。</span></p>
+              </div>
+              <div class="sw-stanza">
+                <p class="sw-line"><span class="en">We teach girls that they cannot be sexual beings</span><span class="zh cjk">我们教女孩：她们不能成为有性欲、能自主表达的人，</span></p>
+                <p class="sw-line"><span class="en">in the way that boys are.</span><span class="zh cjk">不能像男孩那样自然地拥有性的主体性。</span></p>
+              </div>
+              <p class="sw-line sw-def"><span class="en">Feminist: a person who believes in the social, political, and economic equality of the sexes.</span><span class="zh cjk">女性主义者：相信两性在社会、政治与经济层面一律平等的人。</span></p>
+              <div class="sw-hook">
+                <p class="sw-line"><span class="en">You wake up, flawless.</span><span class="zh cjk">你醒来，就是完美无瑕。</span></p>
+                <p class="sw-line"><span class="en">Post up, flawless.</span><span class="zh cjk">你站定，依然完美无瑕。</span></p>
+              </div>
+            </div>
+            <div class="sw-credit">— Chimamanda Ngozi Adichie · 后经 Beyoncé《***Flawless》传唱</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 WHAT IT WANTS TO CHANGE -->
+    <section class="section" id="change">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">02</span> The Agenda</div>
+          <h2 class="sec-title"><span class="cjk">它想改变什么</span><span class="sec-title-en">What It Seeks to Change</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">女性主义的诉求随时代不断扩展：从最初"让女性拥有和男性一样的法律权利"，逐步深入到家庭、身体、文化与语言这些最日常、也最隐秘的角落。它想改变的，大致可归为以下几个领域。</p>
+        </div>
+        <div class="domains reveal">
+          <div class="domain">
+            <div class="di">01</div>
+            <h4 class="cjk">政治权利</h4><span class="en">Political Rights</span>
+            <p class="cjk">选举权、被选举权、参政议政——这是历史上最早、最核心的战场。</p>
+          </div>
+          <div class="domain">
+            <div class="di">02</div>
+            <h4 class="cjk">经济平等</h4><span class="en">Economic Equality</span>
+            <p class="cjk">同工同酬、消除职场歧视、打破"玻璃天花板"，并要求承认无偿家务与照护劳动的价值。</p>
+          </div>
+          <div class="domain">
+            <div class="di">03</div>
+            <h4 class="cjk">法律地位</h4><span class="en">Legal Standing</span>
+            <p class="cjk">财产权、离婚权、人身安全的法律保护，以及对性别暴力的有效追责。</p>
+          </div>
+          <div class="domain">
+            <div class="di">04</div>
+            <h4 class="cjk">身体自主</h4><span class="en">Bodily Autonomy</span>
+            <p class="cjk">对自己身体的决定权、生育自主、免于性骚扰与性暴力的自由。</p>
+          </div>
+          <div class="domain">
+            <div class="di">05</div>
+            <h4 class="cjk">教育与机会</h4><span class="en">Education & Access</span>
+            <p class="cjk">平等的受教育权，以及进入各行各业、各个层级的真实机会。</p>
+          </div>
+          <div class="domain">
+            <div class="di">06</div>
+            <h4 class="cjk">文化与表征</h4><span class="en">Culture & Representation</span>
+            <p class="cjk">挑战媒体、艺术、广告中把女性物化或刻板化的方式，改变语言里的性别偏见。</p>
+          </div>
+          <div class="domain">
+            <div class="di">07</div>
+            <h4 class="cjk">私领域关系</h4><span class="en">The Private Sphere</span>
+            <p class="cjk">家庭分工、照护责任、亲密关系中的权力——"个人即政治"正是指此。</p>
+          </div>
+          <div class="domain">
+            <div class="di">08</div>
+            <h4 class="cjk">重新定义性别</h4><span class="en">Redefining Gender</span>
+            <p class="cjk">质疑"男性气质／女性气质"究竟是天生的，还是被社会反复塑造出来的。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 WHAT IT CRITIQUES -->
+    <section class="section" id="critique">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">03</span> The Target</div>
+          <h2 class="sec-title"><span class="cjk">它批判的对象</span><span class="sec-title-en">What It Critiques & Condemns</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">如果只能用一个词概括女性主义批判的对象，那就是 <strong>父权制（patriarchy）</strong>——一套以男性为中心、系统性地把权力、资源与话语优先分配给男性的社会结构与文化秩序。它不是某个人的阴谋，而是一种没有人单独签署、却人人身处其中的<strong>默认设置</strong>。</p>
+          <p class="cjk">这里有一个<strong>至关重要的区分</strong>，几乎是理解女性主义的分水岭：它的批判矛头指向的是<strong>结构与制度</strong>，而不是把"所有男性"当成敌人。父权制是一套规则，它造就了某些男性的特权，但同样苛刻地规训和伤害男性——要求他们坚硬、不许示弱、以养家能力定义价值。把批判结构误读成"仇恨某个群体"，会让真正的问题被掩盖。</p>
+          <p class="cjk">再深一层：父权制最顽固之处，在于它<strong>不必靠暴力维持</strong>——它把规则<strong>内化</strong>进每个人的眼睛与欲望里。于是女性会用挑剔的目光审视自己的身体，男性会因一次落泪而羞愧；压迫由此不再需要监工，而是由被压迫者与施压者<strong>共同、自动地再生产</strong>。这，正是它比任何一个"坏人"都更难对付的原因。</p>
+          <div class="note cjk"><span class="tag">概念纵深</span>"物化"（objectification）在这里有一条值得追到底的链条：先是<strong>他者的凝视</strong>把女性当作被观看、被评价、被消费的对象；继而这种眼光被<strong>内化</strong>，演变为<strong>自我物化</strong>（self-objectification）——人开始习惯性地从外部、以"我好不好看"来审视自己。女性主义的洞见在于：评判一个人"性感与否"的标准并非自然事实，而是被社会建构、并经由文化反复加固的；把它当成天经地义，本身就是结构正在起作用的证据。</div>
+        </div>
+        <div class="targets reveal">
+          <div class="target">
+            <span class="badge">结构</span>
+            <div><h4 class="cjk">父权制<span class="en">Patriarchy</span></h4><p class="cjk">把领导、决策、定义权默认交给男性，把女性安排在从属、辅助、被照看的位置的整套社会安排。</p></div>
+          </div>
+          <div class="target">
+            <span class="badge">观念</span>
+            <div><h4 class="cjk">性别主义 / 性别歧视<span class="en">Sexism</span></h4><p class="cjk">基于性别而非能力，对人作出预设、差别对待或贬低——无论它以恶意还是"善意保护"的面目出现。</p></div>
+          </div>
+          <div class="target">
+            <span class="badge">暴力</span>
+            <div><h4 class="cjk">性别暴力<span class="en">Gender-based Violence</span></h4><p class="cjk">家庭暴力、性侵害、性骚扰，以及把这些暴力正常化、为施害者开脱的文化氛围。</p></div>
+          </div>
+          <div class="target">
+            <span class="badge">文化</span>
+            <div><h4 class="cjk">物化与凝视<span class="en">Objectification & the Gaze</span></h4><p class="cjk">把女性当作供人观看、评价、消费的"对象"，而非有欲望与意志的"主体"，并使女性内化这种眼光来审视自己。</p></div>
+          </div>
+          <div class="target">
+            <span class="badge">标准</span>
+            <div><h4 class="cjk">双重标准<span class="en">Double Standards</span></h4><p class="cjk">同一种行为，对不同性别给出截然不同的评价（如"风流"与"荡妇"），以及对女性外貌、年龄、婚育的额外苛求。</p></div>
+          </div>
+          <div class="target">
+            <span class="badge">分工</span>
+            <div><h4 class="cjk">不公的性别分工<span class="en">Unequal Division of Labor</span></h4><p class="cjk">把照护、家务等无偿劳动默认推给女性（"第二轮班"），却在社会评价中将其隐形、不予承认。</p></div>
+          </div>
+        </div>
+        <div class="prose reveal">
+          <div class="note cjk"><span class="tag">注意</span>不同流派眼中的"主犯"并不相同：<strong>自由主义</strong>批判法律与制度上的不平等；<strong>激进派</strong>把父权制视为最根本的压迫系统；<strong>马克思主义派</strong>批判资本主义与父权制的合谋；<strong>交叉性</strong>则强调性别、种族、阶级等多重压迫的交织。下一章会逐一展开。</div>
+        </div>
+        <figure class="photo reveal">
+          <div class="photo-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Suffragette%20arrest,%20London,%201914.jpg?width=760" alt="1914 年伦敦，一名妇女参政论者被警察逮捕" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('noimg');">
+            <span class="ph-fallback">1914 · 伦敦，参政论者被捕<br>（联网后自动加载）</span>
+          </div>
+          <figcaption class="fig-cap cjk"><b>被批判的，是这套结构本身</b>1914 年伦敦，一名要求选举权的女性被警察抬走。女性主义的矛头不指向"某些男人"，而指向像这样把规则、强制力与正当性默认配置给一方的<strong>父权秩序</strong>。<span class="src">历史照片 · 公有领域，经 Wikimedia Commons。</span></figcaption>
+        </figure>
+        <figure class="figure reveal">
+          <svg viewBox="0 0 720 300" role="img" aria-label="物化到自我物化的闭环图解" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#9A1B30"/></marker>
+              <radialGradient id="iris" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#221C16"/><stop offset="55%" stop-color="#221C16"/><stop offset="58%" stop-color="#9A1B30"/><stop offset="100%" stop-color="#AE7C24"/></radialGradient>
+            </defs>
+            <!-- observer eye -->
+            <g transform="translate(120,150)">
+              <path d="M-62,0 Q0,-46 62,0 Q0,46 -62,0 Z" fill="none" stroke="#221C16" stroke-width="2.5"/>
+              <circle r="22" fill="url(#iris)"/><circle r="7" fill="#221C16"/><circle cx="-6" cy="-6" r="3.4" fill="#FFFFFF" opacity=".95"/>
+              <text x="0" y="78" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" letter-spacing="1" fill="#4C4136">他者的凝视</text>
+              <text x="0" y="95" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9.5" letter-spacing="1.5" fill="#8A7C6A">THE GAZE</text>
+            </g>
+            <!-- gaze ray -->
+            <line x1="190" y1="150" x2="300" y2="150" stroke="#9A1B30" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#ar)">
+              <animate attributeName="stroke-dashoffset" from="26" to="0" dur="1.1s" repeatCount="indefinite"/>
+            </line>
+            <!-- subject figure becomes object -->
+            <g transform="translate(372,150)">
+              <rect x="-46" y="-86" width="92" height="172" rx="6" fill="none" stroke="#221C16" stroke-width="2" opacity=".25"/>
+              <circle cx="0" cy="-44" r="20" fill="none" stroke="#221C16" stroke-width="2.5"/>
+              <path d="M-26,52 Q0,-14 26,52" fill="none" stroke="#221C16" stroke-width="2.5"/>
+              <!-- internalized small eye -->
+              <g transform="translate(0,-44)">
+                <path d="M-13,0 Q0,-10 13,0 Q0,10 -13,0 Z" fill="#FFFFFF" stroke="#9A1B30" stroke-width="1.6"/>
+                <circle r="4.6" fill="#9A1B30"><animate attributeName="r" values="4.6;3.2;4.6" dur="2.4s" repeatCount="indefinite"/></circle>
+              </g>
+              <text x="0" y="104" text-anchor="middle" font-family="Archivo,sans-serif" font-size="13" letter-spacing="1" fill="#4C4136">被观看的对象</text>
+              <text x="0" y="121" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9.5" letter-spacing="1.5" fill="#8A7C6A">OBJECTIFIED</text>
+            </g>
+            <!-- internalization arrow looping back into her own eye -->
+            <path d="M444,150 Q560,150 560,80 Q560,20 430,40 Q392,46 380,96" fill="none" stroke="#AE7C24" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#ar)">
+              <animate attributeName="stroke-dashoffset" from="0" to="26" dur="1.4s" repeatCount="indefinite"/>
+            </path>
+            <text x="560" y="150" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="15" fill="#AE7C24">内化</text>
+            <text x="560" y="168" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9" letter-spacing="1.5" fill="#8A7C6A">SELF-OBJECTIFICATION</text>
+          </svg>
+          <figcaption class="fig-cap cjk">图解 · 凝视的闭环：他者的目光（红）把人变成被评价的对象；这目光再被<strong>内化</strong>（金）成"她自己审视自己的眼睛"——压迫由此无需监工，自动循环。<span class="fc-en">The objectification loop, from external gaze to internalized self-surveillance.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 04 THE PATH -->
+    <section class="section" id="path">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">04</span> The Path</div>
+          <h2 class="sec-title"><span class="cjk">它指出的路</span><span class="sec-title-en">The Path It Offers</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">女性主义不只是"指出问题"，它也给出一种看世界、过生活的方式。它给人的核心启发，可以浓缩为下面四条。</p>
+        </div>
+        <div class="principles reveal">
+          <div class="principle">
+            <div><h4 class="cjk">批判性意识<span class="en cjk">Consciousness-raising · 看见原本被当作"自然"的东西</span></h4>
+            <p class="cjk">许多不平等之所以牢固，是因为它伪装成"本来如此"。女性主义的第一步，是把"天经地义"重新打上问号：为什么是她带孩子？为什么"女孩子家"就该文静？一旦看见，就再也无法假装没看见。</p></div>
+          </div>
+          <div class="principle">
+            <div><h4 class="cjk">能动性<span class="en cjk">Agency · 做自己生活的主体，而非被定义的客体</span></h4>
+            <p class="cjk">不被"别人怎么看"所定义，而是夺回对自己身体、欲望、人生选择的主导权。从"被观看的对象"转变为"行动与判断的主体"。</p></div>
+          </div>
+          <div class="principle">
+            <div><h4 class="cjk">团结<span class="en cjk">Solidarity · 把个人遭遇连成集体行动</span></h4>
+            <p class="cjk">"个人即政治"——你以为只是自己倒霉的私事，往往是千万人共同面对的结构问题。看见这一点，就能从孤立的隐忍走向彼此支持与公共改变。</p></div>
+          </div>
+          <div class="principle">
+            <div><h4 class="cjk">重新想象<span class="en cjk">Reimagining · 不是取代，而是重建</span></h4>
+            <p class="cjk">目标不是让女性挤进既有的男性秩序、复制同一套支配逻辑，而是重新设想一种对所有性别都更自由、更公正的关系。<strong>它要的不是"女性凌驾男性"，而是"无人因性别而被压迫"。</strong></p></div>
+          </div>
+        </div>
+        <div class="pullquote reveal">
+          <blockquote class="cjk">"女人不是天生的，而是后天被塑造成的。"</blockquote>
+          <cite>Simone de Beauvoir · 西蒙娜·德·波伏娃</cite>
+        </div>
+        <div class="prose reveal">
+          <div class="note cjk"><span class="tag">埋一个伏笔</span>这四条听上去彼此和谐，其实暗藏张力：第一条要你<strong>看穿"我以为天经地义的渴望"</strong>，第二条又要你<strong>尊重"我自己的选择"</strong>。可若我此刻想要的东西，本身就是被训练出来的呢？——这道裂缝，正是后面几章（尤其第 10 章）要逼你直面的。</div>
+        </div>
+        <figure class="video reveal">
+          <button class="vid" type="button" data-yt="7n9IOH0NvyY" aria-label="播放视频：性别平等惠及所有人——包括男性 — Michael Kimmel">
+            <span class="vid-bg" aria-hidden="true"></span>
+            <span class="vid-play" aria-hidden="true"><svg width="62" height="62" viewBox="0 0 64 64" role="img" aria-label="播放"><circle cx="32" cy="32" r="31" fill="rgba(252,251,249,.94)" stroke="#9A1B30" stroke-width="1.6"/><path d="M26 20.5 L46 32 L26 43.5 Z" fill="#9A1B30"/></svg></span>
+            <span class="vid-meta">
+              <span class="vid-tag">TED · 演讲 Talk</span>
+              <span class="vid-title cjk">性别平等惠及所有人——男性也在其中</span>
+              <span class="vid-by">Michael Kimmel · TEDWomen, 2015</span>
+            </span>
+          </button>
+          <figcaption class="fig-cap cjk">社会学家金梅尔用数据与幽默说明：性别平等不是零和——它让男性也活得更自由、更健康、更幸福。这正是上面"重新想象"一条的注脚：要的不是谁压倒谁，而是无人因性别而被束缚。<span class="fc-en"><a href="https://youtu.be/7n9IOH0NvyY" target="_blank" rel="noopener">在 YouTube 观看 ↗ · 若内嵌无法播放请点此</a></span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 05 WAVES -->
+    <section class="section" id="waves">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">05</span> History</div>
+          <h2 class="sec-title"><span class="cjk">历史的四次浪潮</span><span class="sec-title-en">The Four Waves</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">人们常用"浪潮"来描述女性主义的历史阶段。这是一个方便的比喻，但要记住：它主要描述<strong>西方（尤其英美）</strong>的脉络，各浪潮之间也并非泾渭分明，而是层层叠加、彼此回应。</p>
+        </div>
+        <figure class="portrait left reveal">
+          <div class="portrait-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20Wollstonecraft%20by%20John%20Opie%20(c.%201797).jpg" alt="玛丽·沃斯通克拉夫特肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('noimg');">
+            <span class="portrait-fallback">玛丽·沃斯通克拉夫特<br>肖像（联网后自动加载）</span>
+          </div>
+          <figcaption><b>玛丽·沃斯通克拉夫特</b>（Mary Wollstonecraft，1759–1797）<span class="src">约翰·欧皮（John Opie）油画，约 1797 年 · 英国国家肖像馆 · 公有领域，经 Wikimedia Commons。她 1792 年的《为女权辩护》被视为现代女性主义的奠基文本，早于"第一波"近一个世纪。</span></figcaption>
+        </figure>
+        <figure class="figure reveal">
+          <svg viewBox="0 0 760 240" role="img" aria-label="女性主义四次浪潮示意图" preserveAspectRatio="xMidYMid meet">
+            <line x1="20" y1="196" x2="740" y2="196" stroke="#D9CDB6" stroke-width="1.5"/>
+            <!-- each wave: rising crest, taller over time -->
+            <path d="M20,196 Q110,150 200,196" fill="none" stroke="#6C1020" stroke-width="2.6" stroke-linecap="round"><animate attributeName="stroke-dasharray" values="0 600;600 0" dur="1.2s" fill="freeze"/></path>
+            <path d="M150,196 Q280,118 410,196" fill="none" stroke="#9A1B30" stroke-width="2.6" stroke-linecap="round"><animate attributeName="stroke-dasharray" values="0 600;600 0" dur="1.2s" begin="0.25s" fill="freeze"/></path>
+            <path d="M360,196 Q500,92 640,196" fill="none" stroke="#AE7C24" stroke-width="2.6" stroke-linecap="round"><animate attributeName="stroke-dasharray" values="0 700;700 0" dur="1.2s" begin="0.5s" fill="freeze"/></path>
+            <path d="M560,196 Q650,66 740,196" fill="none" stroke="#1E544F" stroke-width="2.6" stroke-linecap="round"><animate attributeName="stroke-dasharray" values="0 600;600 0" dur="1.2s" begin="0.75s" fill="freeze"/></path>
+            <!-- labels -->
+            <g font-family="Fraunces,Georgia,serif" font-weight="900" text-anchor="middle">
+              <text x="110" y="142" font-size="15" fill="#6C1020">1st</text>
+              <text x="280" y="110" font-size="15" fill="#9A1B30">2nd</text>
+              <text x="500" y="84" font-size="15" fill="#AE7C24">3rd</text>
+              <text x="650" y="58" font-size="15" fill="#1E544F">4th</text>
+            </g>
+            <g font-family="Archivo,sans-serif" font-size="9.5" letter-spacing="1" text-anchor="middle" fill="#8A7C6A">
+              <text x="110" y="214">1840s–1920s</text><text x="280" y="214">1960s–80s</text><text x="500" y="214">1990s–2000s</text><text x="650" y="214">2010s–</text>
+            </g>
+            <g font-family="Noto Serif SC,serif" font-size="11" text-anchor="middle" fill="#4C4136">
+              <text x="110" y="229">选举权</text><text x="280" y="229">身体与私领域</text><text x="500" y="229">交叉性·身份</text><text x="650" y="229">#MeToo</text>
+            </g>
+          </svg>
+          <figcaption class="fig-cap cjk">图解 · 四次浪潮：一波未平、一波又起，且声势层层叠高——后浪并未取代前浪，而是把战场推向更深。<span class="fc-en">The four waves build on, rather than replace, one another.</span></figcaption>
+        </figure>
+        <div class="timeline reveal">
+          <div class="wave">
+            <div class="era">约 1840s–1920s</div>
+            <h4>第一波<span class="en">First Wave</span></h4>
+            <p class="cjk">争取法律与政治权利，核心战场是<strong>选举权</strong>。思想先驱玛丽·沃斯通克拉夫特早在 1792 年就主张：女性的"柔弱"并非天性，而是教育缺失的结果。</p>
+            <div class="marks"><span>1792《女权辩护》</span><span>1848 塞尼卡福尔斯会议</span><span>1893 新西兰首予女性普选权</span><span>妇女参政论者 Suffragettes</span></div>
+          </div>
+          <div class="wave">
+            <div class="era">约 1960s–1980s</div>
+            <h4>第二波<span class="en">Second Wave</span></h4>
+            <p class="cjk">从"权利"走进"日常生活"——家庭、职场、身体与性都成为议题。标志性口号是<strong>"个人即政治"</strong>。波伏娃《第二性》（1949）常被视为其思想源头，弗里丹《女性的奥秘》（1963）则点燃了美国的运动。</p>
+            <div class="marks"><span>同工同酬</span><span>生育与堕胎权</span><span>反对家庭暴力</span><span>意识提升小组</span></div>
+          </div>
+          <div class="wave">
+            <div class="era">约 1990s–2000s</div>
+            <h4>第三波<span class="en">Third Wave</span></h4>
+            <p class="cjk">强调<strong>多元与差异</strong>，批评第二波过于以白人中产女性为中心。拥抱交叉性、身体自主与性的能动性，甚至开始追问："女性"本身是不是一个稳定统一的范畴？</p>
+            <div class="marks"><span>1989 提出"交叉性"</span><span>1990《性别麻烦》</span><span>身体自主</span><span>差异与个体</span></div>
+          </div>
+          <div class="wave">
+            <div class="era">约 2010s–至今</div>
+            <h4>第四波<span class="en">Fourth Wave</span></h4>
+            <p class="cjk">以<strong>互联网与社交媒体</strong>为主阵地。2017 年起的 #MeToo 运动把对性骚扰与性暴力的曝光推向全球，线上行动主义、跨性别包容的辩论成为新焦点。</p>
+            <div class="marks"><span>#MeToo（2017—）</span><span>社交媒体行动</span><span>反性骚扰</span><span>包容性辩论</span></div>
+          </div>
+        </div>
+        <figure class="photo reveal">
+          <div class="photo-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Annie%20Kenney%20and%20Christabel%20Pankhurst%20%28cropped%29.jpg?width=720" alt="参政论者安妮·肯尼与克里斯塔贝尔·潘克赫斯特" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('noimg');">
+            <span class="ph-fallback">第一波 · 参政论者历史照片<br>（联网后自动加载）</span>
+          </div>
+          <figcaption class="fig-cap cjk"><b>第一波 · 妇女参政论者</b>安妮·肯尼与克里斯塔贝尔·潘克赫斯特——英国"妇女社会与政治联盟"（WSPU）的代表人物，为女性选举权抗争、入狱、绝食。<span class="src">历史照片，约 1908 年 · 公有领域，经 Wikimedia Commons。</span></figcaption>
+        </figure>
+        <figure class="photo reveal">
+          <div class="photo-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Women%27s%20March%20on%20Washington%20%2832593123745%29.jpg?width=860" alt="2017 年华盛顿妇女大游行" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('noimg');">
+            <span class="ph-fallback">第四波 · 2017 华盛顿妇女大游行<br>（联网后自动加载）</span>
+          </div>
+          <figcaption class="fig-cap cjk"><b>第四波 · 华盛顿妇女大游行</b>2017 年 1 月，全球数百万人走上街头，是有记录以来规模最大的单日抗议之一——社交媒体时代行动主义的缩影。<span class="src">摄影：Mobilus In Mobili · CC BY-SA，经 Wikimedia Commons。一个多世纪过去，街头仍在。</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 06 SCHOOLS -->
+    <section class="section" id="schools">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">06</span> Schools of Thought</div>
+          <h2 class="sec-title"><span class="cjk">主要流派</span><span class="sec-title-en">The Major Schools</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">这是全站的核心。下面每一张卡片都是一个独立的流派，附上它的<strong>核心主张、批判焦点、代表人物</strong>，以及它的<strong>行为导向与人群画像</strong>。</p>
+          <p class="cjk">读它们时请记住一件事：这些流派<strong>不是一份可以随意混搭的"口味菜单"，而是一组互相竞争的范式</strong>。它们共享一个客厅（性别平等的关切），却在"压迫的根源是什么""该用什么手段""谁算'女人'""个人的选择算不算数"上分歧极深——有些分歧，<strong>深到不可调和</strong>。先看清每一派要什么；它们如何正面相撞、又如何逼你选边，留到第 10 章「不可调和的矛盾」专门处理。</p>
+        </div>
+        <figure class="figure figure-wide reveal">
+          <svg viewBox="0 0 760 500" role="img" aria-label="女性主义主要流派的坐标地图" preserveAspectRatio="xMidYMid meet">
+            <!-- axes -->
+            <line x1="380" y1="46" x2="380" y2="470" stroke="#D9CDB6" stroke-width="1.5"/>
+            <line x1="40" y1="250" x2="720" y2="250" stroke="#D9CDB6" stroke-width="1.5"/>
+            <g font-family="Archivo,sans-serif" font-size="11" letter-spacing="1.5" fill="#8A7C6A">
+              <text x="380" y="32" text-anchor="middle">结构 / 集体 · STRUCTURAL</text>
+              <text x="380" y="490" text-anchor="middle">个人 / 能动 · INDIVIDUAL</text>
+              <text x="44" y="245" text-anchor="start">改良 REFORM</text>
+              <text x="716" y="245" text-anchor="end">革命 REVOLUTION</text>
+            </g>
+            <!-- school nodes: each dot sits tight against its own label; rows are staggered so nothing overlaps -->
+            <g font-family="Noto Serif SC,serif" font-size="12.5" fill="#221C16">
+              <g><circle cx="300" cy="82" r="6.5" fill="#2A3A6B"/><text x="288" y="86" text-anchor="end">后现代 / 后结构</text></g>
+              <g><circle cx="455" cy="82" r="6.5" fill="#2A3A6B"/><text x="467" y="86">跨性别女性主义</text></g>
+              <g><circle cx="250" cy="142" r="6.5" fill="#1E544F"/><text x="238" y="146" text-anchor="end">文化 / 差异</text></g>
+              <g><circle cx="560" cy="128" r="6.5" fill="#6C1020"/><text x="572" y="132">激进派</text></g>
+              <g><circle cx="580" cy="190" r="6.5" fill="#2A3A6B"/><text x="592" y="194">马克思 / 社会主义</text></g>
+              <g><circle cx="250" cy="202" r="6.5" fill="#7C5230"/><text x="238" y="206" text-anchor="end">信仰女性主义</text></g>
+              <g><circle cx="495" cy="242" r="6.5" fill="#3C5230"/><text x="507" y="246">交叉性</text></g>
+              <g><circle cx="300" cy="322" r="6.5" fill="#9A1B30"/><text x="288" y="326" text-anchor="end">自由主义</text></g>
+              <g><circle cx="560" cy="320" r="6.5" fill="#5C2A47"/><text x="572" y="324">黑人 / 女性主义</text></g>
+              <g><circle cx="250" cy="382" r="6.5" fill="#3C5230"/><text x="238" y="386" text-anchor="end">生态女性主义</text></g>
+              <g><circle cx="560" cy="388" r="6.5" fill="#5C2A47"/><text x="572" y="392">后殖民 / 第三世界</text></g>
+              <g><circle cx="300" cy="432" r="6.5" fill="#AE7C24"/><text x="288" y="436" text-anchor="end">流行 / 选择派</text></g>
+            </g>
+          </svg>
+          <figcaption class="fig-cap cjk">图解 · 流派坐标地图（示意，非精确刻度）：横轴是<strong>改良↔革命</strong>，纵轴是<strong>个人能动↔结构集体</strong>。同一象限的流派更接近，对角的流派往往正面冲突。下面做的自测，用的正是这套坐标。<span class="fc-en">A conceptual map; the self-test below uses the same two axes.</span></figcaption>
+        </figure>
+        <figure class="photo reveal">
+          <div class="photo-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/We%20Can%20Do%20It%21%20NARA%20535413%20-%20Restoration%202.jpg?width=520" alt="“We Can Do It!”铆工露西海报" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('noimg');">
+            <span class="ph-fallback">“We Can Do It!” 海报<br>（联网后自动加载）</span>
+          </div>
+          <figcaption class="fig-cap cjk"><b>同一个符号，各派都来认领</b>这张二战时期的“We Can Do It!”后来成为女性力量的通用图标——自由派、流行／选择派、激进派都曾援引它。这恰好说明本节的要点：流派们<strong>共享一些符号与关切，却在“它到底意味着什么”上分道扬镳</strong>。<span class="src">J. Howard Miller，1943 · 公有领域，经 Wikimedia Commons。</span></figcaption>
+        </figure>
+      </div>
+      <div class="schools reveal">
+
+        <article class="school" style="--c:var(--crimson)">
+          <span class="tag">改良 · 体制内</span>
+          <h4 class="cjk">自由主义女性主义</h4><span class="h-en">Liberal Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">在现有民主与法律框架内，争取男女<b>平等的权利与机会</b>。相信改革法律、教育与制度即可实现平等。</dd>
+            <dt>批判</dt><dd class="cjk">制度性歧视、机会不平等、法律上的不公。</dd>
+            <dt>代表</dt><dd class="cjk">沃斯通克拉夫特、约翰·斯图亚特·密尔、贝蒂·弗里丹、格洛丽亚·斯泰纳姆。</dd>
+            <dt>画像</dt><dd class="cjk">推动反歧视立法、教育平权、提升女性参政与职场比例。温和、渐进。常被批评"只帮精英女性进入既有体系，却不挑战体系本身"。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--crimson-deep)">
+          <span class="tag">根本 · 激进</span>
+          <h4 class="cjk">激进女性主义</h4><span class="h-en">Radical Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">父权制是<b>最古老、最根本</b>的压迫形式，渗透进家庭、性与生育等一切角落。仅靠改革不够，须从根本改造性别秩序。</dd>
+            <dt>批判</dt><dd class="cjk">父权制本身；男性对女性身体与性的控制（围绕性暴力、色情、卖淫的争论尤为激烈）。</dd>
+            <dt>代表</dt><dd class="cjk">凯特·米利特《性政治》、舒拉米斯·费尔斯通、德沃金、麦金农。</dd>
+            <dt>画像</dt><dd class="cjk">强调"个人即政治"、意识提升、女性空间与姐妹情谊。内部在色情、性工作、跨性别议题上分歧巨大——部分人持排斥跨性别立场（即争议性的 TERF），这本身极具争议。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--forest)">
+          <span class="tag">阶级 · 经济</span>
+          <h4 class="cjk">马克思主义 / 社会主义女性主义</h4><span class="h-en">Marxist / Socialist Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">女性的压迫与资本主义的<b>阶级压迫紧密交织</b>。家务与照护是被资本无偿占有的劳动，须同时改变经济结构与性别结构。</dd>
+            <dt>批判</dt><dd class="cjk">资本主义与父权制的"合谋"；无偿再生产劳动；阶级与性别的双重剥削。</dd>
+            <dt>代表</dt><dd class="cjk">恩格斯（思想源头）、克拉拉·蔡特金、柯伦泰、西尔维娅·费代里奇、海蒂·哈特曼。</dd>
+            <dt>画像</dt><dd class="cjk">关注劳工权益、"家务有偿"运动、公共照护与福利、用阶级视角分析性别。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--teal)">
+          <span class="tag">多重 · 交织</span>
+          <h4 class="cjk">交叉性女性主义</h4><span class="h-en">Intersectional Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">性别压迫无法脱离<b>种族、阶级、性取向、残障、国籍</b>等身份单独分析；多重身份交织，会产生独特的压迫经验。</dd>
+            <dt>批判</dt><dd class="cjk">主流（白人中产）女性主义的"单一视角"，忽视边缘女性的真实处境。</dd>
+            <dt>代表</dt><dd class="cjk">金伯利·克伦肖（提出"交叉性"一词）、bell hooks、奥德雷·洛德、帕特里夏·希尔·柯林斯。</dd>
+            <dt>画像</dt><dd class="cjk">强调多元、包容、为最边缘者发声。是当代女性主义最主流的分析框架之一。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--ochre)">
+          <span class="tag">种族 · 经验</span>
+          <h4 class="cjk">黑人女性主义 / 妇女主义</h4><span class="h-en">Black Feminism / Womanism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">黑人女性<b>同时面对种族主义与性别主义</b>，既未被白人女性主义充分代表，也未被（男性主导的）反种族运动充分代表。"妇女主义"强调黑人女性自身的文化与经验主体性。</dd>
+            <dt>批判</dt><dd class="cjk">把"女性"想象成单一群体、实则以白人经验为默认值的做法。</dd>
+            <dt>代表</dt><dd class="cjk">bell hooks、奥德雷·洛德、安吉拉·戴维斯、艾丽斯·沃克（提出 Womanism）、孔布河集体。</dd>
+            <dt>画像</dt><dd class="cjk">把反种族、反阶级、反性别压迫视为不可分割的整体行动。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--plum)">
+          <span class="tag">差异 · 价值</span>
+          <h4 class="cjk">文化 / 差异女性主义</h4><span class="h-en">Cultural / Difference Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">不追求"和男性一样"，而是<b>肯定女性独特的价值、经验与伦理</b>（如关怀、连结、共情）。强调差异，而非同一。</dd>
+            <dt>批判</dt><dd class="cjk">把男性的方式当作唯一标准、要求女性向其看齐的"同化式"平等观。</dd>
+            <dt>代表</dt><dd class="cjk">卡罗尔·吉利根《不同的声音》（关怀伦理）、内尔·诺丁斯。</dd>
+            <dt>画像</dt><dd class="cjk">重视关怀伦理、母性与女性文化。也因此被批评有"本质主义"风险——把女性气质当成天生不变。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--indigo)">
+          <span class="tag">解构 · 理论</span>
+          <h4 class="cjk">后现代 / 后结构主义女性主义</h4><span class="h-en">Postmodern / Poststructuralist Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">质疑"女性"是否是一个稳定统一的范畴。性别不是固定本质，而是被语言与权力<b>反复"操演"（performativity）</b>出来的。</dd>
+            <dt>批判</dt><dd class="cjk">一切把性别本质化、二元化的预设。</dd>
+            <dt>代表</dt><dd class="cjk">朱迪斯·巴特勒（性别操演）、西苏、克里斯蒂娃、伊里加雷（法国女性主义）。</dd>
+            <dt>画像</dt><dd class="cjk">高度理论化，解构性别二元。对身份政治既提供资源，也提出质疑——若"女性"不稳定，运动该以谁之名进行？</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--forest)">
+          <span class="tag">生态 · 支配</span>
+          <h4 class="cjk">生态女性主义</h4><span class="h-en">Ecofeminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">对女性的压迫与对自然的支配，出自<b>同一种"支配逻辑"</b>——都把"他者"当作可任意征用的对象。解放女性与保护自然彼此相连。</dd>
+            <dt>批判</dt><dd class="cjk">将女性与自然一同贬为"被征服对象"的父权—工业逻辑。</dd>
+            <dt>代表</dt><dd class="cjk">范达娜·席娃、卡罗琳·麦茜特、多本（d'Eaubonne，造词者）。</dd>
+            <dt>画像</dt><dd class="cjk">把环境正义与性别正义结合，常活跃于环保、可持续与本土生态运动。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--plum)">
+          <span class="tag">殖民 · 语境</span>
+          <h4 class="cjk">后殖民 / 第三世界女性主义</h4><span class="h-en">Postcolonial / Third-World Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">非西方女性的处境必须放回<b>殖民历史与本土文化语境</b>中理解，不能套用西方模板，更不该被本土语境下的解放路径所取代。</dd>
+            <dt>批判</dt><dd class="cjk">西方女性主义把非西方女性想象成"无声的、千篇一律的受害者"的傲慢。</dd>
+            <dt>代表</dt><dd class="cjk">钱德拉·莫汉蒂《在西方眼睛下》、佳亚特里·斯皮瓦克（"从属者能说话吗？"）、乌玛·纳拉扬。</dd>
+            <dt>画像</dt><dd class="cjk">警惕"拯救者叙事"，主张在各自历史与文化中寻找解放路径。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--teal)">
+          <span class="tag">认同 · 包容</span>
+          <h4 class="cjk">跨性别女性主义</h4><span class="h-en">Transfeminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">把跨性别者（尤其跨性别女性）的解放纳入女性主义；主张<b>性别认同应被尊重</b>，反对以生理性别作为"女性"的唯一标准。</dd>
+            <dt>批判</dt><dd class="cjk">把"女性"窄化为生理定义、从而排斥跨性别者的立场。</dd>
+            <dt>代表</dt><dd class="cjk">朱莉娅·塞拉诺《Whipping Girl》、桑迪·斯通。</dd>
+            <dt>画像</dt><dd class="cjk">主张包容与自我认同。与部分激进派在"性别 vs 生理性别"上尖锐对立——这是当代最激烈的内部争论之一。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:var(--ochre)">
+          <span class="tag">当代 · 流行</span>
+          <h4 class="cjk">流行 / "选择"女性主义</h4><span class="h-en">Popular / "Choice" Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">把女性主义<b>个体化、生活化</b>："只要是我自主的选择，就是女性主义的。"借助流行文化与社交媒体广泛传播。</dd>
+            <dt>批判</dt><dd class="cjk">（来自其他流派的）批评指出它可能淡化结构分析，把解放简化为消费与个人风格（如对"girlboss"文化的反思）。</dd>
+            <dt>代表</dt><dd class="cjk">相关讨论：罗克珊·盖伊《坏女性主义者》、阿迪契《我们都该是女性主义者》。</dd>
+            <dt>画像</dt><dd class="cjk">门槛低、影响广，让女性主义"出圈"；也因此被质疑是否过于稀释了批判锋芒。</dd>
+          </dl>
+        </article>
+
+        <article class="school" style="--c:#7C5230">
+          <span class="tag">信仰 · 跨宗教</span>
+          <h4 class="cjk">信仰 / 宗教女性主义</h4><span class="h-en">Religious &amp; Faith-based Feminism</span>
+          <dl>
+            <dt>主张</dt><dd class="cjk">信仰与性别平等<b>并不冲突</b>。问题不在宗教本身，而在对经典的<b>父权式诠释</b>。主张从传统<b>内部</b>重读圣典、夺回女性的诠释权（涵盖伊斯兰、基督教、犹太教、佛教等）。</dd>
+            <dt>批判</dt><dd class="cjk">宗教中的男性神职垄断、把不平等说成"神意"的解经，以及世俗女性主义对信仰女性"必是受害者"的预设。</dd>
+            <dt>代表</dt><dd class="cjk">阿米娜·瓦杜德（伊斯兰）、罗斯玛丽·拉德福德·吕特（基督教）、朱迪斯·普拉斯科（犹太教）。</dd>
+            <dt>画像</dt><dd class="cjk">拒绝在"信仰"与"女性主义"之间二选一的信徒；在清真寺、教堂、经文里争取平等。常与世俗、激进等派别就"宗教是否本质压迫"正面冲突——见第 10 章第 07 条。</dd>
+          </dl>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 07 THINKERS -->
+    <section class="section" id="thinkers">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">07</span> Key Figures</div>
+          <h2 class="sec-title"><span class="cjk">关键思想家</span><span class="sec-title-en">Key Thinkers</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">下面这些名字，是理解女性主义思想脉络的"坐标"。每位附上其生卒年、贡献领域，以及一句最能代表其思想的核心命题。</p>
+        </div>
+      </div>
+      <div class="thinkers reveal">
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">MW</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20Wollstonecraft%20Portrait.jpg?width=320" alt="玛丽·沃斯通克拉夫特肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1759–1797</span><h4>Mary Wollstonecraft</h4><span class="role cjk">玛丽·沃斯通克拉夫特 · 启蒙先驱</span><p class="cjk">最早系统主张女性平等教育的人。认为女性的"软弱"源于被剥夺理性教育，而非天性。</p><span class="idea cjk">"软弱不是天性，而是缺乏教育的结果。"</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">SB</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Simone%20De%20Beauvoir%20(cropped).jpg?width=320" alt="西蒙娜·德·波伏娃肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1908–1986</span><h4>Simone de Beauvoir</h4><span class="role cjk">西蒙娜·德·波伏娃 · 存在主义</span><p class="cjk">《第二性》奠定现代女性主义思想基础。提出女性被建构为相对于男性的"他者"。</p><span class="idea cjk">"女人不是天生的，而是后天形成的。"</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">BF</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Betty%20Friedan%201960.jpg?width=320" alt="贝蒂·弗里丹肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1921–2006</span><h4>Betty Friedan</h4><span class="role cjk">贝蒂·弗里丹 · 自由主义</span><p class="cjk">《女性的奥秘》道出战后家庭主妇"无名的不满"，点燃美国第二波运动。</p><span class="idea cjk">命名了那个"说不出名字的问题"。</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">AL</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Audre%20Lorde.jpg?width=320" alt="奥德雷·洛德肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1934–1992</span><h4>Audre Lorde</h4><span class="role cjk">奥德雷·洛德 · 黑人 / 交叉性</span><p class="cjk">诗人与活动家，强调差异本身就是力量，反对单一同质的女性主义。</p><span class="idea cjk">"用主人的工具，拆不掉主人的房子。"</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">AD</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Angela%20Davis,%201974.jpg?width=320" alt="安吉拉·戴维斯肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1944–</span><h4>Angela Davis</h4><span class="role cjk">安吉拉·戴维斯 · 种族 / 阶级</span><p class="cjk">把种族、阶级与性别压迫连成一体，是监狱废除与种族正义的重要思想者。</p><span class="idea cjk">解放须同时跨越种族、阶级与性别。</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">CM</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Catharine%20MacKinnon,%20May%202006.jpg?width=320" alt="凯瑟琳·麦金农肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1946–</span><h4>Catharine MacKinnon</h4><span class="role cjk">凯瑟琳·麦金农 · 激进 / 法律</span><p class="cjk">法学家，奠定"性骚扰"作为法律概念的基础，主张法律须正视权力不对等。</p><span class="idea cjk">把"性骚扰"写进了法律。</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">bh</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bell%20hooks,%20October%202014.jpg?width=320" alt="贝尔·胡克斯肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1952–2021</span><h4>bell hooks</h4><span class="role cjk">贝尔·胡克斯 · 交叉性</span><p class="cjk">以平易语言把交叉性、爱与解放带给大众。强调女性主义属于每一个人。</p><span class="idea cjk">"女性主义是终结性别主义压迫的运动。"</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">JB</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/JudithButler2013.jpg?width=320" alt="朱迪斯·巴特勒肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1956–</span><h4>Judith Butler</h4><span class="role cjk">朱迪斯·巴特勒 · 后结构主义</span><p class="cjk">《性别麻烦》提出"性别操演"：性别不是本质，而是被反复演练出来的。</p><span class="idea cjk">性别是"做出来"的，不是"生来"的。</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">KC</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kimberl%C3%A9%20Crenshaw%20(40901215153).jpg?width=320" alt="金伯利·克伦肖肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1959–</span><h4>Kimberlé Crenshaw</h4><span class="role cjk">金伯利·克伦肖 · 法学</span><p class="cjk">1989 年提出"交叉性"，揭示黑人女性如何同时落在种族与性别的盲区。</p><span class="idea cjk">创造了"交叉性"（intersectionality）。</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">LM</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laura%20Mulvey%20Fot%20Mariusz%20Kubik%20July%2024%202010%2006.JPG?width=320" alt="劳拉·穆尔维肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1942–</span><h4>Laura Mulvey</h4><span class="role cjk">劳拉·穆尔维 · 电影理论</span><p class="cjk">1975 年提出"男性凝视"，分析视觉文化如何把女性塑造为被观看的对象。</p><span class="idea cjk">提出了"男性凝视"（the male gaze）。</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">CG</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carol%20Gilligan%20P1010970%20-%20cropped.jpg?width=320" alt="卡罗尔·吉利根肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1944–</span><h4>Carol Gilligan</h4><span class="role cjk">卡罗尔·吉利根 · 关怀伦理</span><p class="cjk">指出主流道德理论以男性为标准，提出重视关系与关怀的"不同的声音"。</p><span class="idea cjk">道德不止有"正义"，还有"关怀"。</span></div>
+        <div class="thinker"><div class="thinker-portrait"><span class="tp-mono" aria-hidden="true">CM</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chandra%20Talpade%20Mohanty%20(2011).jpg?width=320" alt="钱德拉·莫汉蒂肖像" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div><span class="yrs">1955–</span><h4>Chandra T. Mohanty</h4><span class="role cjk">钱德拉·莫汉蒂 · 后殖民</span><p class="cjk">批评西方女性主义把第三世界女性同质化为"被动受害者"。</p><span class="idea cjk">拒绝"在西方眼睛下"看世界。</span></div>
+      </div>
+      <div class="wrap">
+        <h3 class="subhead reveal"><span class="cjk">理论之外：行动者与全球之声</span><span class="sub-en">Beyond Theory — Activists & Global Voices</span></h3>
+        <div class="prose reveal">
+          <p class="cjk">上面的名单偏向学院理论家。但推动改变的，还有把思想带进街头、议会与公众视野的人——她们来自不同大陆、不同领域，正是"多元"二字的注脚。</p>
+        </div>
+        <div class="gallery reveal">
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">GS</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gloria%20Steinem%20%2829459760190%29%20%28cropped%29.jpg?width=360" alt="格洛丽亚·斯泰纳姆" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>格洛丽亚·斯泰纳姆</b>Gloria Steinem · <span class="g-en">美国</span><br>记者、第二波运动的公共旗手。</figcaption>
+          </figure>
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">CA</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Chimamanda%20Ngozi%20Adichie%20%282015%29.png?width=360" alt="奇玛曼达·恩戈兹·阿迪契" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>奇玛曼达·阿迪契</b>C. N. Adichie · <span class="g-en">尼日利亚</span><br>作家，《我们都该是女性主义者》。</figcaption>
+          </figure>
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">MY</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Malala%20Yousafzai%202023%20portrait%202x3.jpg?width=360" alt="马拉拉·优素福扎伊" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>马拉拉·优素福扎伊</b>Malala Yousafzai · <span class="g-en">巴基斯坦</span><br>女童教育倡导者，最年轻诺奖得主。</figcaption>
+          </figure>
+        </div>
+        <figure class="video reveal">
+          <button class="vid" type="button" data-yt="akOe5-UsQ2o" aria-label="播放视频：交叉性的紧迫性 — Kimberlé Crenshaw">
+            <span class="vid-bg" aria-hidden="true"></span>
+            <span class="vid-play" aria-hidden="true"><svg width="62" height="62" viewBox="0 0 64 64" role="img" aria-label="播放"><circle cx="32" cy="32" r="31" fill="rgba(252,251,249,.94)" stroke="#9A1B30" stroke-width="1.6"/><path d="M26 20.5 L46 32 L26 43.5 Z" fill="#9A1B30"/></svg></span>
+            <span class="vid-meta">
+              <span class="vid-tag">TED · 演讲 Talk</span>
+              <span class="vid-title cjk">交叉性的紧迫性</span>
+              <span class="vid-by">Kimberlé Crenshaw · TED, 2016</span>
+            </span>
+          </button>
+          <figcaption class="fig-cap cjk">"交叉性"一词的提出者克伦肖（见上方名单）亲自现身说法：当种族与性别叠加，有些人为何会同时落进两套体系的盲区，被双重忽视。<span class="fc-en"><a href="https://youtu.be/akOe5-UsQ2o" target="_blank" rel="noopener">在 YouTube 观看 ↗ · 若内嵌无法播放请点此</a></span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 08 GLOSSARY -->
+    <section class="section" id="glossary">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">08</span> Lexicon</div>
+          <h2 class="sec-title"><span class="cjk">核心概念辞典</span><span class="sec-title-en">A Glossary of Key Concepts</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">读懂女性主义的讨论，需要先掌握它的"关键词"。下面按主题收录最常用的核心概念。</p>
+        </div>
+        <div class="glossary reveal">
+          <div class="term"><h4 class="cjk">父权制</h4><span class="en">Patriarchy</span><p class="cjk">以男性为中心、系统性地把权力与资源分配给男性的社会结构。它批判的是结构，而非个人。</p></div>
+          <div class="term"><h4 class="cjk">性别 vs 生理性别</h4><span class="en">Gender vs Sex</span><p class="cjk">"生理性别"指身体特征；"社会性别"指社会赋予的角色、气质与期待。许多流派主张：后者是被建构的，而非生理决定的。</p></div>
+          <div class="term"><h4 class="cjk">性别主义</h4><span class="en">Sexism</span><p class="cjk">基于性别的偏见或歧视，既可能是恶意贬低，也可能是"为你好"式的善意保护。</p></div>
+          <div class="term"><h4 class="cjk">物化</h4><span class="en">Objectification</span><p class="cjk">把一个人（尤其其身体）当作供使用、观看、评价的"物"，而忽视其作为主体的人格与意志。</p></div>
+          <div class="term"><h4 class="cjk">（男性）凝视</h4><span class="en">The Male Gaze</span><p class="cjk">劳拉·穆尔维提出：视觉文化习惯以男性视角来呈现女性，把她塑造为"被观看者"，观众也被训练以这种眼光去看。</p></div>
+          <div class="term"><h4 class="cjk">自我物化</h4><span class="en">Self-objectification</span><p class="cjk">当外部的凝视被内化，人开始<b>用他人的眼光打量自己</b>，习惯性地把自己当作被评价的对象来监控、修饰。</p></div>
+          <div class="term"><h4 class="cjk">交叉性</h4><span class="en">Intersectionality</span><p class="cjk">克伦肖提出：性别、种族、阶级等多重身份会交织叠加，产生单看任一维度都无法解释的独特压迫。</p></div>
+          <div class="term"><h4 class="cjk">玻璃天花板</h4><span class="en">Glass Ceiling</span><p class="cjk">一种看不见却真实存在的无形障碍，阻挡女性（及少数群体）晋升到组织高层。</p></div>
+          <div class="term"><h4 class="cjk">第二轮班</h4><span class="en">The Second Shift</span><p class="cjk">霍克希尔德提出：女性在完成有薪工作后，回家还要承担大量无偿家务与育儿，等于上"第二个班"。</p></div>
+          <div class="term"><h4 class="cjk">情感劳动</h4><span class="en">Emotional Labor</span><p class="cjk">为符合他人或岗位期待而管理、表演自身情绪的劳动。这类付出常被忽视、且多落在女性身上。</p></div>
+          <div class="term"><h4 class="cjk">性别操演</h4><span class="en">Gender Performativity</span><p class="cjk">巴特勒提出：性别不是先天本质，而是通过日复一日的言行被"演练"和固定下来的。</p></div>
+          <div class="term"><h4 class="cjk">个人即政治</h4><span class="en">The Personal Is Political</span><p class="cjk">看似私人的处境（家务、亲密关系、身体），其实是公共的、结构性的政治问题。</p></div>
+          <div class="term"><h4 class="cjk">厌女</h4><span class="en">Misogyny</span><p class="cjk">对女性的敌意、轻蔑或惩罚——尤其针对那些"不守本分"、不符合性别期待的女性。</p></div>
+          <div class="term"><h4 class="cjk">有毒的男子气概</h4><span class="en">Toxic Masculinity</span><p class="cjk">指那种压抑情感、崇尚支配与攻击的男性气质规范。它伤害女性，也同样伤害男性自身。</p></div>
+          <div class="term"><h4 class="cjk">荡妇羞辱</h4><span class="en">Slut-shaming</span><p class="cjk">因女性的（真实或想象的）性表达而对其进行贬低、羞辱——典型的性别双重标准。</p></div>
+          <div class="term"><h4 class="cjk">同意</h4><span class="en">Consent</span><p class="cjk">强调任何性接触都须基于自愿、清醒、可随时撤回的明确同意。"沉默"不等于"同意"。</p></div>
+          <div class="term"><h4 class="cjk">男性中心主义</h4><span class="en">Androcentrism</span><p class="cjk">把男性经验当作"普遍的人类标准"，而把女性视为偏离标准的"特殊情况"。</p></div>
+          <div class="term"><h4 class="cjk">本质主义 vs 建构主义</h4><span class="en">Essentialism vs Constructivism</span><p class="cjk">前者认为性别气质是天生固有的；后者认为它主要是社会与文化塑造的产物。这是流派分歧的关键轴线。</p></div>
+          <div class="term"><h4 class="cjk">关怀伦理</h4><span class="en">Ethics of Care</span><p class="cjk">一种重视关系、责任与具体处境的道德取向，挑战只讲抽象规则与"正义"的主流伦理学。</p></div>
+          <div class="term"><h4 class="cjk">平权行动</h4><span class="en">Affirmative Action</span><p class="cjk">为纠正历史性不平等而采取的倾斜性措施（如配额、优先录用）。其公平性本身也是热议焦点。</p></div>
+        </div>
+        <figure class="video reveal">
+          <button class="vid" type="button" data-yt="Bo7o2LYATDc" aria-label="播放视频：你的行为塑造了你的性别 — Judith Butler">
+            <span class="vid-bg" aria-hidden="true"></span>
+            <span class="vid-play" aria-hidden="true"><svg width="62" height="62" viewBox="0 0 64 64" role="img" aria-label="播放"><circle cx="32" cy="32" r="31" fill="rgba(252,251,249,.94)" stroke="#9A1B30" stroke-width="1.6"/><path d="M26 20.5 L46 32 L26 43.5 Z" fill="#9A1B30"/></svg></span>
+            <span class="vid-meta">
+              <span class="vid-tag">Big Think · 访谈 Interview</span>
+              <span class="vid-title cjk">你的行为塑造了你的性别</span>
+              <span class="vid-by">Judith Butler · Big Think</span>
+            </span>
+          </button>
+          <figcaption class="fig-cap cjk">"性别操演"（Gender Performativity）一词的提出者巴特勒本人解释这个概念：性别不是你"是"什么，而是你日复一日"做"出来的——正好为上面的辞条做活的注解。<span class="fc-en"><a href="https://youtu.be/Bo7o2LYATDc" target="_blank" rel="noopener">在 YouTube 观看 ↗ · 若内嵌无法播放请点此</a></span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 09 DEBATES -->
+    <section class="section" id="debates">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">09</span> Debate</div>
+          <h2 class="sec-title"><span class="cjk">内部争论与外部批评</span><span class="sec-title-en">Internal Debates & External Critiques</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">一个诚实的导览不会只讲"它说了什么好话"。女性主义内部分歧激烈，外部也面对持续的批评。把这些争论摆出来，恰恰是它作为一种严肃思想的证据。本章先以中立的方式画出这张<strong>分歧地图</strong>；至于其中那些<strong>无法靠折中化解</strong>的断层，则留给下一章逐条解剖，并把问题反推给你自己。</p>
+        </div>
+        <div class="debate-grid reveal">
+          <div class="debate-col">
+            <h3><span class="dot" style="background:var(--crimson)"></span>内部争论 Within</h3>
+            <div class="debate-item"><h5 class="cjk">性工作与色情</h5><p class="cjk">是对女性的剥削，还是个人能动的自主选择？激进派多视其为压迫的产物；"性积极"派（sex-positive）则强调女性的性自主权。</p></div>
+            <div class="debate-item"><h5 class="cjk">跨性别的包容</h5><p class="cjk">"女性"应以性别认同还是生理性别来界定？跨性别女性主义主张前者；部分"性别批判"立场（gender-critical）坚持后者。这是当下最尖锐的裂痕。</p></div>
+            <div class="debate-item"><h5 class="cjk">普遍 vs 差异</h5><p class="cjk">是否存在一种共通的"女性经验"？还是说，种族、阶级、文化的差异使"女性"根本无法被统一谈论？</p></div>
+            <div class="debate-item"><h5 class="cjk">"选择"是否等于解放</h5><p class="cjk">"只要是我的选择就是女性主义的"——这种个体化叙事被一些人欢迎，也被另一些人批评为淡化了结构批判、滑向消费主义。</p></div>
+            <div class="debate-item"><h5 class="cjk">男性能否是女性主义者</h5><p class="cjk">多数当代观点认为可以——作为盟友（ally）参与；但在角色与话语权上仍有讨论。</p></div>
+          </div>
+          <div class="debate-col">
+            <h3><span class="dot" style="background:var(--ink-soft)"></span>外部批评 From Outside</h3>
+            <div class="debate-item"><h5 class="cjk">传统 / 保守视角</h5><p class="cjk">批评者认为某些主张削弱了家庭、模糊了他们看重的性别角色与分工，担忧其对传统秩序的冲击。</p></div>
+            <div class="debate-item"><h5 class="cjk">"忽视男性议题"之说</h5><p class="cjk">部分批评者主张，公共讨论较少关注男性面临的困境（如教育落后、心理健康、自杀率、子女监护权等），认为这需要被一并看见。</p></div>
+            <div class="debate-item"><h5 class="cjk">古典自由主义的质疑</h5><p class="cjk">一些人支持机会平等，却质疑以配额、结果平等为导向的政策是否反而造成新的不公。</p></div>
+            <div class="debate-item"><h5 class="cjk">经验科学上的争论</h5><p class="cjk">进化心理学等领域对"一切性别差异都是社会建构"提出经验质疑；学界对此本身尚无定论，争论激烈。</p></div>
+            <div class="debate-item"><h5 class="cjk">运动内部生态</h5><p class="cjk">也有批评指向运动内部的派系冲突、标签化或言论氛围过紧——这类批评同样来自部分认同其目标的人。</p></div>
+          </div>
+        </div>
+        <div class="prose reveal">
+          <div class="note cjk"><span class="tag">本站立场</span>以上批评的列出，不代表本站对其逐条认同或否定，而是为了呈现一个真实、有争议的思想图景。一个值得分享的导览，应当让读者看到分歧，并自行判断。</div>
+        </div>
+        <figure class="video reveal">
+          <button class="vid" type="button" data-yt="D9Ihs241zeg" aria-label="播放视频：单一故事的危险 — Chimamanda Ngozi Adichie">
+            <span class="vid-bg" aria-hidden="true"></span>
+            <span class="vid-play" aria-hidden="true"><svg width="62" height="62" viewBox="0 0 64 64" role="img" aria-label="播放"><circle cx="32" cy="32" r="31" fill="rgba(252,251,249,.94)" stroke="#9A1B30" stroke-width="1.6"/><path d="M26 20.5 L46 32 L26 43.5 Z" fill="#9A1B30"/></svg></span>
+            <span class="vid-meta">
+              <span class="vid-tag">TED · 演讲 Talk</span>
+              <span class="vid-title cjk">单一故事的危险</span>
+              <span class="vid-by">Chimamanda Ngozi Adichie · TED, 2009</span>
+            </span>
+          </button>
+          <figcaption class="fig-cap cjk">当一个群体只被一种叙事定义，会发生什么？这篇演讲正呼应上文"普遍 vs 差异"之争，也是莫汉蒂批评西方把"第三世界女性"同质化为单一受害者形象的最佳注脚——多元，正是对抗单一故事的解药。<span class="fc-en"><a href="https://youtu.be/D9Ihs241zeg" target="_blank" rel="noopener">在 YouTube 观看 ↗ · 若内嵌无法播放请点此</a></span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 10 IRRECONCILABLE FRACTURES -->
+    <section class="section" id="fractures">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">10</span> The Fractures</div>
+          <h2 class="sec-title"><span class="cjk">派系之间不可调和的矛盾</span><span class="sec-title-en">The Irreconcilable Fractures</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">上一节把分歧当作可以心平气和"各打五十大板"的东西来罗列。这一节更难。下面这些冲突，不是可以澄清的误会，也不是可以调和的"侧重不同"——它们建立在<strong>彼此排斥的前提</strong>之上。它们不可能同时为真：持守其中一个，在逻辑上就意味着否定另一个。</p>
+          <p class="fx-intro cjk">本节不打算告诉你谁赢了。它要做的，是让你发现——你其实<strong>早已悄悄选了边，只是未必知道为什么</strong>。大多数人毫不自觉地同时持有来自互相矛盾阵营的信念：上午为"这是她的选择"辩护，下午又为"她被父权规训"痛心。接下来要做的，不是逼你站队，而是逼你找到自己那条<strong>"律条"</strong>——你究竟站在什么地基上？读这七条断层线时，请一边读，一边问自己：<strong>在这一刀两断之处，我站哪边？</strong></p>
+        </div>
+        <figure class="figure reveal">
+          <svg viewBox="0 0 760 150" role="img" aria-label="不可调和的断裂带示意" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="plateL" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#9A1B30" stop-opacity=".16"/><stop offset="100%" stop-color="#9A1B30" stop-opacity=".5"/></linearGradient>
+              <linearGradient id="plateR" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1E544F" stop-opacity=".5"/><stop offset="100%" stop-color="#1E544F" stop-opacity=".16"/></linearGradient>
+            </defs>
+            <!-- left plate, drifting left -->
+            <g><animateTransform attributeName="transform" type="translate" values="0 0;-7 0;0 0" dur="6s" repeatCount="indefinite"/>
+              <path d="M0,40 L356,40 L372,75 L350,110 L0,110 Z" fill="url(#plateL)" stroke="#9A1B30" stroke-width="1.5"/>
+              <text x="60" y="82" font-family="Archivo,sans-serif" font-size="12" letter-spacing="2" fill="#6C1020">立场 A</text>
+            </g>
+            <!-- right plate, drifting right -->
+            <g><animateTransform attributeName="transform" type="translate" values="0 0;7 0;0 0" dur="6s" repeatCount="indefinite"/>
+              <path d="M760,40 L404,40 L388,75 L410,110 L760,110 Z" fill="url(#plateR)" stroke="#1E544F" stroke-width="1.5"/>
+              <text x="700" y="82" font-family="Archivo,sans-serif" font-size="12" letter-spacing="2" text-anchor="end" fill="#1E544F">立场 B</text>
+            </g>
+            <!-- fault gap -->
+            <text x="380" y="28" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-style="italic" font-size="15" fill="#221C16">断裂带</text>
+            <text x="380" y="138" text-anchor="middle" font-family="Archivo,sans-serif" font-size="9.5" letter-spacing="2" fill="#8A7C6A">THE FAULT LINE — NO MIDDLE GROUND</text>
+          </svg>
+          <figcaption class="fig-cap cjk">图解 · 这些不是可以填平的缝隙，而是两块向相反方向漂移的板块——它们之间没有中间地带。<span class="fc-en">Two plates drifting apart: there is no middle ground to stand on.</span></figcaption>
+        </figure>
+        <figure class="photo reveal">
+          <div class="photo-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Suffragists%20Parade%20Down%20Fifth%20Avenue,%201917.JPG?width=860" alt="1917 年纽约第五大道妇女参政大游行" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('noimg');">
+            <span class="ph-fallback">1917 · 纽约第五大道参政大游行<br>（联网后自动加载）</span>
+          </div>
+          <figcaption class="fig-cap cjk"><b>同一面旗下，裂痕从一开始就在</b>1917 年，数万人沿纽约第五大道为女性选举权游行，看似万众一心。可即便是这场运动，内部也布满难以弥合的分裂：温和派与激进派的路线之争、白人组织者对黑人参政者的排挤……<strong>齐步向前，从不等于立场一致</strong>。下面这七条，就是今天仍在裂开的断层。<span class="src">1917 年历史照片 · 公有领域，经 Wikimedia Commons。</span></figcaption>
+        </figure>
+        <div class="fractures reveal">
+
+          <div class="fracture">
+            <div class="fx-head"><span class="fx-n">01</span><div class="fx-t">同意，能否豁免压迫？<span class="en">Can Consent Exempt Oppression?</span></div></div>
+            <div class="fx-poles">
+              <div class="pole a"><span class="p-lab">能动优先 · Agency</span><h5 class="cjk">同意，是判断的终点</h5><p class="cjk">一个成年女性自愿做的事——性工作、出演色情、为取悦自己而展示身体——只要出于她本人的同意，就应被尊重为她的自由。污名与禁令只会让她更不安全、更无依靠。把"她同意了"当作终点，正是对一个女性主体的尊重。</p></div>
+              <div class="pole b"><span class="p-lab">结构优先 · Structure</span><h5 class="cjk">同意，洗不掉结构</h5><p class="cjk">在父权与经济胁迫之下，"同意"从来不是真空里的自由。当一整套产业系统性地把女性身体变成可购买的商品，个体的"我愿意"无法为这套结构脱罪。你无法靠同意，把自己从结构性的从属里赎出来。（麦金农、德沃金）</p></div>
+            </div>
+            <div class="fx-why"><span class="lab">为何无解</span>一方把个体同意奉为近乎神圣的底线；另一方把结构性条件置于个体同意之上。<b>没有任何折中能同时满足两者</b>——要么同意能定案，要么不能。</div>
+            <div class="fx-ask"><span class="lab">把刀递给你</span><p class="cjk">当一个女人说"这是我自己选的"，对你而言，这句话<b>是不是讨论的终点</b>？如果是，你站在能动这一边；如果你心里立刻升起一个"但是……"，你已经站到了结构那一边——你确定你想站在那里，并愿意承担它的代价吗？</p></div>
+            <div class="fx-quote"><span class="q-mark">❝</span><div><blockquote class="cjk">「当权力并不对等，'她同意了'不能证明这就是自由。」</blockquote><cite>凯瑟琳·麦金农 · Catharine MacKinnon<span class="side">结构一方</span></cite></div></div>
+          </div>
+
+          <div class="fracture">
+            <div class="fx-head"><span class="fx-n">02</span><div class="fx-t">"女人"到底指谁？<span class="en">Who Does "Woman" Refer To?</span></div></div>
+            <div class="fx-poles">
+              <div class="pole a"><span class="p-lab">生理基础 · Sex-based</span><h5 class="cjk">主体根植于身体经验</h5><p class="cjk">"女性"这一政治主体，根植于女性的生理与共同的成长经验——被当作女孩养大，面对月经、生育、特定的暴力风险。若"女人"等于"任何自我认同为女人的人"，那么女性主义要保护的那个主体本身就溶解了。（部分性别批判立场）</p></div>
+              <div class="pole b"><span class="p-lab">社会建构 · Constructed</span><h5 class="cjk">身体不能决定你是谁</h5><p class="cjk">性别是被操演、被建构的，不是生理事实的奴隶。跨性别女性就是女性。以生理来划界，恰恰重复了女性主义本要反对的<b>生理本质主义</b>——用身体替一个人定义她是谁。（巴特勒、塞拉诺）</p></div>
+            </div>
+            <div class="fx-why"><span class="lab">为何无解</span>这是一场关于"女人"这个词究竟<b>指什么</b>的本体论之争。你无法在"生理类别"与"自我认同类别"之间各取一半——两个定义互相排斥，没有中间地带。</div>
+            <div class="fx-ask"><span class="lab">把刀递给你</span><p class="cjk">把"女人"定义清楚，听起来像文字游戏，实则决定了<b>谁能进入女性空间、谁的经验被算作"女性经验"</b>。当你脱口而出"女性"二字时，你心里指的到底是哪一个？你愿意为这个定义，承担它的全部后果吗？</p></div>
+            <div class="fx-quote"><span class="q-mark">❝</span><div><blockquote class="cjk">「性别是你不断在做的事，而非你天生所是。」</blockquote><cite>朱迪斯·巴特勒 · Judith Butler<span class="side">建构一方</span></cite></div></div>
+          </div>
+
+          <div class="fracture">
+            <div class="fx-head"><span class="fx-n">03</span><div class="fx-t">究竟有没有一个"女人"？<span class="en">Is There a Single "Woman" at All?</span></div></div>
+            <div class="fx-poles">
+              <div class="pole a"><span class="p-lab">统一主体 · Universal</span><h5 class="cjk">姐妹情谊跨越国界</h5><p class="cjk">存在一种共通的女性处境，"姐妹情谊是全球性的"。性别是首要的压迫轴线；唯有团结在"女人"这一共同身份之下，运动才有撬动现实的力量。</p></div>
+              <div class="pole b"><span class="p-lab">交叉性 · Intersectional</span><h5 class="cjk">根本不存在抽象的"女人"</h5><p class="cjk">一个富裕的白人女性与一个贫穷的移民女工，并不共享同一种处境。只谈性别，就抹去了种族、阶级与殖民——而那个被默认的"普遍女人"，往往悄悄就是<b>特权女人</b>。（克伦肖、胡克斯、洛德、莫汉蒂）</p></div>
+            </div>
+            <div class="fx-why"><span class="lab">为何无解</span>坚持统一主体，就要抹平差异；彻底拥抱差异，又可能失去运动所需的那个共同主体。这是<b>"团结"与"诚实"之间的两难</b>，难以两全。</div>
+            <div class="fx-ask"><span class="lab">把刀递给你</span><p class="cjk">当你说"为了女性"，你脑海里浮现的是<b>谁的脸</b>？如果只有一种，你也许正在用一部分女性，悄悄代表了全部女性。</p></div>
+            <div class="fx-quote"><span class="q-mark">❝</span><div><blockquote class="cjk">「用主人的工具，永远拆不掉主人的房子。」</blockquote><cite>奥德雷·洛德 · Audre Lorde<span class="side">交叉性一方</span></cite></div></div>
+          </div>
+
+          <div class="fracture">
+            <div class="fx-head"><span class="fx-n">04</span><div class="fx-t">是进入这张桌子，还是掀翻它？<span class="en">Join the Table, or Flip It?</span></div></div>
+            <div class="fx-poles">
+              <div class="pole a"><span class="p-lab">改良 · Reform</span><h5 class="cjk">系统可以被修好</h5><p class="cjk">在现有的法律、市场与政治中争取平等——同工同酬、打破玻璃天花板、让更多女性进入董事会与议会。一步一步来，制度终能改良。（自由主义女性主义）</p></div>
+              <div class="pole b"><span class="p-lab">革命 · Revolution</span><h5 class="cjk">桌子本身就该被掀翻</h5><p class="cjk">系统本身（父权 × 资本）才是问题。让几个女人坐上一张本质压迫性的桌子，不是胜利，而是<b>收编</b>。"girlboss""向前一步"式的成功，恰恰替旧秩序续了命。（激进派 / 马克思主义派）</p></div>
+            </div>
+            <div class="fx-why"><span class="lab">为何无解</span>一方要女性在资本主义里成功，另一方视这套秩序本身为必须废除之物。把一个女人送进董事会，对一方是凯旋，对另一方是背叛。</div>
+            <div class="fx-ask"><span class="lab">把刀递给你</span><p class="cjk">一位女性 CEO 裁掉了她工厂里的女工——她是女性主义的<b>胜利，还是它的反例</b>？你的答案，暴露了你究竟把"性别平等"放在"阶级正义"之上、之下，还是并列。</p></div>
+            <div class="fx-quote"><span class="q-mark">❝</span><div><blockquote class="cjk">「我不为我的性别求恩赐，只请你们把脚从我们脖子上挪开。」</blockquote><cite>萨拉·格里姆克 · Sarah Grimké（金斯伯格常引用）<span class="side">平等一方</span></cite></div></div>
+          </div>
+
+          <div class="fracture">
+            <div class="fx-head"><span class="fx-n">05</span><div class="fx-t">要求"和男人一样"，是不是已经输了？<span class="en">Is "Sameness" Already a Defeat?</span></div></div>
+            <div class="fx-poles">
+              <div class="pole a"><span class="p-lab">平等 / 同一 · Equality</span><h5 class="cjk">一视同仁</h5><p class="cjk">女性在相关能力上与男性并无本质不同，应被一视同仁。一切"女性天生不同"的论调，历史上都被用来把女性关回原位。</p></div>
+              <div class="pole b"><span class="p-lab">差异 / 关怀 · Difference</span><h5 class="cjk">别拿男性当标准</h5><p class="cjk">女性（无论天生还是被塑造）承载着一套不同的价值——关怀、关系、连结——它们应被珍视，而非被抹平。要求女性"变得像男人"，本身就默认了<b>男性是标准</b>。（吉利根）</p></div>
+            </div>
+            <div class="fx-why"><span class="lab">为何无解</span>一方说强调差异会把女性重新关进笼子；另一方说抹平差异本身就是一种以男性为中心的要求。<b>同一与差异，互为陷阱。</b></div>
+            <div class="fx-ask"><span class="lab">把刀递给你</span><p class="cjk">你希望世界"<b>不再把女性当作另类</b>"，还是希望世界"<b>重新尊重那些被贬为'女性化'的特质</b>"？这两个愿望，常常背道而驰。</p></div>
+            <div class="fx-quote"><span class="q-mark">❝</span><div><blockquote class="cjk">「一旦把男性当作人类的标准，女性就永远是那个偏离。」</blockquote><cite>卡罗尔·吉利根 · Carol Gilligan<span class="side">差异一方</span></cite></div></div>
+          </div>
+
+          <div class="fracture">
+            <div class="fx-head"><span class="fx-n">06</span><div class="fx-t">你说的"我愿意"，到底算不算数？<span class="en">Does Your "I Want To" Count?</span></div></div>
+            <div class="fx-poles">
+              <div class="pole a"><span class="p-lab">经验为准 · Her Word</span><h5 class="cjk">她的体验，她说了算</h5><p class="cjk">化妆、医美、高跟鞋、当全职妈妈、为爱人改变、追求"性感"——若一个女人自由地选择了它，那么<b>因为这是她自主的选择，它就是女性主义的</b>。尊重女性的能动性，是整件事的全部意义。</p></div>
+              <div class="pole b"><span class="p-lab">结构为准 · False Consciousness</span><h5 class="cjk">"我愿意"可能是被种进来的</h5><p class="cjk">偏好是在父权之中被塑造的。"我喜欢""我愿意"可能是<b>适应性偏好</b>——你以为是自由，其实是被规训后的自洽。若一切选择都叫"赋权"，那么<b>当一切都是女性主义，就没有什么是女性主义</b>。</p></div>
+            </div>
+            <div class="fx-why"><span class="lab">为何无解 · 也是最深的一条</span>它问的是：一个人对自己体验的陈述，是不是<b>最终的权威</b>？承认是——你便无法批判任何"自愿的"不平等；承认不是——你就赋予了某些人"替别人判断她其实不自由"的权力。这一条贯穿前五条。</div>
+            <div class="fx-ask"><span class="lab">现在，把刀对准你自己</span><p class="cjk">你最近一次说"这是我自己想要的"——是化妆、是减肥、是为某人改变，还是渴望被看见、被认为好看——那一刻，你愿意相信"我愿意"就是终点吗？还是你敢追问一句：<b>这个"想要"，有多少是我的，有多少是被种进来的？</b>没有标准答案。但你怎么回答，就决定了你心里那条律条，究竟把"自由"放在"清醒"之前，还是之后。</p></div>
+            <div class="fx-quote"><span class="q-mark">❝</span><div><blockquote class="cjk">「在父权的注视下，女人往往成了自己最严苛的看守。」</blockquote><cite>桑德拉·巴特基 · Sandra Bartky<span class="side">结构一方</span></cite></div></div>
+          </div>
+
+          <div class="fracture">
+            <div class="fx-head"><span class="fx-n">07</span><div class="fx-t">信仰、面纱与文化相对主义<span class="en">Faith, the Veil &amp; Cultural Relativism</span></div></div>
+            <div class="fx-poles">
+              <div class="pole a"><span class="p-lab">普世权利 · Universal Rights</span><h5 class="cjk">有些底线，不分文化</h5><p class="cjk">存在跨越文化的女性基本权利。当一种习俗系统性地伤害女性——强制蒙面、女性割礼、童婚——"那是他们的文化 / 信仰"不能成为豁免的挡箭牌。以"尊重多元"之名对压迫保持沉默，本身就是一种背叛。（奥金、希尔西·阿里）</p></div>
+              <div class="pole b"><span class="p-lab">文化协商 · Relativist / Postcolonial</span><h5 class="cjk">谁给了你审判的资格？</h5><p class="cjk">用西方世俗自由的尺子去丈量别人的信仰与文化，本身就是殖民式的傲慢。许多女性是<b>自主地</b>选择头巾或宗教生活，把它当作认同与抵抗，而非枷锁。"白人男性 / 女性去拯救棕色女性"的剧本，需要被警惕。（莫汉蒂、斯皮瓦克；以及伊斯兰、基督教等信仰女性主义）</p></div>
+            </div>
+            <div class="fx-why"><span class="lab">为何无解</span>一方坚持"某些做法就是错的，无论谁怎么解释"；另一方坚持"这种普世审判本身就是压迫"。一个要划普世底线，一个要废除普世底线——<b>没有一把尺子能同时被两边接受</b>。它又一次回到第 06 条：<b>谁，才是她自己经验的最终权威？</b></div>
+            <div class="fx-ask"><span class="lab">把刀递给你</span><p class="cjk">当一名女性说"戴上头巾是我自愿的虔诚"，而另一位女性主义者说"那是被规训的压迫"——你<b>该信谁</b>？你有没有资格替她判定"她其实并不自由"？如果有，这资格从哪来；如果没有，你又凭什么批判任何"自愿的"不平等？</p></div>
+            <div class="fx-quote"><span class="q-mark">❝</span><div><blockquote class="cjk">「当一种群体文化压迫其中的女性，'尊重文化'就成了问题本身。」</blockquote><cite>苏珊·穆勒·奥金 · Susan Moller Okin<span class="side">普世权利一方</span></cite></div></div>
+          </div>
+
+        </div>
+
+        <div class="mirror reveal">
+          <h4>真正的拷问 <span class="en">The Real Question</span></h4>
+          <p class="cjk">读到这里，请别急着把自己归进某一派。先承认一件更诚实的事：你很可能<strong>同时</strong>持有来自互相矛盾阵营的信念，却从未察觉。你为"她的选择"辩护，又为"她被洗脑"痛心；你要"和男人平起平坐"，又要世界"看见女性的不同"。这不是你的错——这恰恰说明，这些矛盾有多真实、多难。</p>
+          <p class="cjk">于是回到那个被反复回避的问题：女性主义<strong>真正</strong>该批判和追逐的，到底是什么？一个尽量诚实的回答是——它真正该批判的，从来不是"某一类人"（不是"男人"，也不是"某一派女权"），而是<strong>任何把人锁进性别牢笼的力量</strong>：无论这股力量来自古老的传统，还是来自打着"解放"旗号的新教条。它真正该追逐的，也不是某一派系的胜利，而是一种<strong>让人不必再为"是不是个合格的女人 / 男人"而被审视、被打分的处境</strong>——这，正好接住了"凝视"与"社会评价"的全部追问。</p>
+          <p class="cjk">所以，与其急着站队，不如先做一次诚实的自测。下面这面"<strong>价值之镜</strong>"共 <strong>14 道题</strong>，覆盖上述全部断层，对照 <strong>8 大女性主义流派</strong>为你计分——它不给你贴标签，也不是心理测验，只把你的真实倾向<strong>客观地映给你自己看</strong>：你最接近哪一派，又带着哪些别派的影子，还会落在一张"价值坐标"上。测完可一键生成结果卡，分享给朋友比一比。没有人会看到你的答案，除了你自己。</p>
+
+          <div class="quiz" id="quiz" aria-live="polite"></div>
+
+          <p class="cjk" style="margin-top:2rem">而在所有能被打分的题目之外，还有三个<strong>无法被量化、却最该被你自己回答</strong>的问题。它们没有标准答案，也不计入上面的结果：</p>
+          <ol>
+            <li class="cjk">当个体的"我愿意"与结构的"这不公平"正面冲突时，你<strong>最终</strong>信哪一个？</li>
+            <li class="cjk">你要的是"女性变得和男性一样自由"，还是"那些被贬低的'女性特质'被重新尊重"？——想清楚，因为你不能两个都要满。</li>
+            <li class="cjk">如果有一天，"为了女性"必须以牺牲"为了穷人""为了某个族群"为代价，你会怎么选？</li>
+          </ol>
+          <p class="kicker cjk">你怎么回答，远比你"属于哪一派"重要。因为派系会过时，而你借此看清的那条<strong>属于你自己的律条</strong>，会跟着你走很久很久。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 CHINA -->
+    <section class="section" id="china">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">11</span> A Local Context</div>
+          <h2 class="sec-title"><span class="cjk">女性主义在中国</span><span class="sec-title-en">Feminism in China</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">前面的"四次浪潮"主要描述西方。中国有自己独特的脉络——它在<strong>国家、市场、家庭与传统</strong>之间反复拉扯，与西方语境既相呼应，也显著不同。本章尽量把可考的<strong>历史阶段、关键立法、标志性案例、核心数据与话语争议</strong>系统呈现；凡涉及数据，均标注来源；凡涉及尚有争议或经过审查的事件，只陈述有据可查的事实，并尽量并列不同视角。</p>
+          <p class="cjk">需要先立一个判断框架：在中国，性别平等同时存在两条线索——一条是<strong>自上而下的"国家女性主义"</strong>（以全国妇联为代表的体制内路径），一条是<strong>自下而上的民间女权行动</strong>。二者既有合作，也有张力。看懂这一点，下面的事件才不会被简单地读成"进步"或"倒退"的单线故事。</p>
+        </div>
+
+        <!-- 一 历史脉络 -->
+        <h3 class="subhead reveal"><span class="cjk">一、历史脉络：四个阶段</span><span class="sub-en">A History in Four Phases</span></h3>
+        <figure class="portrait left reveal">
+          <div class="portrait-frame">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Qiu%20jin.jpg" alt="秋瑾历史照片" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.parentNode.classList.add('noimg');">
+            <span class="portrait-fallback">秋瑾<br>历史照片（联网后自动加载）</span>
+          </div>
+          <figcaption><b>秋瑾</b>（1875–1907）<span class="src">清末革命家、女权先驱，"鉴湖女侠"。1907 年因起义失败被处决。历史照片 · 公有领域，经 Wikimedia Commons。她以革命与女权并举，是"性别公正在中国并非舶来品"最有力的本土注脚。</span></figcaption>
+        </figure>
+        <div class="timeline reveal">
+          <div class="wave">
+            <div class="era">约 1900s–1949</div>
+            <h4>觉醒与启蒙<span class="en">Awakening</span></h4>
+            <p class="cjk">在救亡图存与新文化运动中，"废缠足、兴女学"成为社会议题。秋瑾以革命与女权并举；何震在《天义》上提出带有无政府主义色彩的女性解放主张；五四之后，"婚姻自由""妇女解放"被推入思想前台，向警予等投身早期妇女运动。这一阶段确立了一个重要事实——<strong>追求性别公正在中国并非"舶来品"，而是有本土根源的。</strong></p>
+            <div class="marks"><span>废缠足</span><span>兴女学</span><span>秋瑾</span><span>何震《天义》</span><span>五四"妇女解放"</span><span>向警予</span></div>
+          </div>
+          <div class="wave">
+            <div class="era">1949–1978</div>
+            <h4>自上而下的平等<span class="en">State Feminism</span></h4>
+            <p class="cjk">1949 年成立全国妇联；1950 年《婚姻法》废除包办与买卖婚姻、确立婚姻自由；1954 年宪法以根本法规定男女平等。"妇女能顶半边天"成为时代口号，女性大规模进入公共劳动，扫盲与教育同步推进。成就显著，但这种平等高度依附于国家议程，<strong>较少触及家庭内部分工与文化观念</strong>。</p>
+            <div class="marks"><span>全国妇联(1949)</span><span>1950《婚姻法》</span><span>1954 宪法</span><span>妇女能顶半边天</span><span>同工同酬</span></div>
+          </div>
+          <div class="wave">
+            <div class="era">1978–2000s</div>
+            <h4>重新浮现的议题<span class="en">Market Reform</span></h4>
+            <p class="cjk">改革开放带来机遇，也使被掩盖的问题浮现：就业市场的性别差异、"下岗"潮中的性别影响、生育与职业的冲突、媒体中的物化。学界兴起"妇女研究"（李小江等）；1995 年北京世界妇女大会把"社会性别"概念带入中国；1992 年《妇女权益保障法》出台，是第一部保障妇女权益的专门法律。</p>
+            <div class="marks"><span>1992《妇女权益保障法》</span><span>1995 北京世妇会</span><span>妇女研究兴起</span><span>就业性别差异</span></div>
+          </div>
+          <div class="wave">
+            <div class="era">2008–至今</div>
+            <h4>能见度与争议<span class="en">The Internet Era</span></h4>
+            <p class="cjk">社交媒体让性别议题获得空前能见度：街头行动主义、#MeToo、以及一系列性别暴力公共事件接连发生，推动了多项立法与制度完善。与此同时，审查、网络"性别对立"与污名化标签也同步出现。这一阶段的特征是——<strong>议题前所未有地活跃，也前所未有地分化。</strong></p>
+            <div class="marks"><span>街头行动</span><span>#MeToo（2018—）</span><span>性别暴力公共事件</span><span>网络论争</span></div>
+          </div>
+        </div>
+        <div class="prose reveal">
+          <p class="cjk">从晚清的革命者到当代的研究者，几张面孔串起这条本土脉络——它有根，且未中断：</p>
+        </div>
+        <div class="gallery reveal">
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">向</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E5%90%91%E8%AD%A6%E4%BA%88.jpg?width=360" alt="向警予" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>向警予</b>1895–1928<br>中共早期妇女运动领导人。</figcaption>
+          </figure>
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">何</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/He_Xiangning.jpg?width=360" alt="何香凝" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>何香凝</b>1878–1972<br>革命家、妇女运动先驱、画家。</figcaption>
+          </figure>
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">宋</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E5%AE%8B%E5%BA%86%E9%BE%84%E6%A0%87%E5%87%86%E5%83%8F.jpg?width=360" alt="宋庆龄" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>宋庆龄</b>1893–1981<br>妇女与儿童权益的长期倡导者。</figcaption>
+          </figure>
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">邓</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Deng_Yingchao.jpg?width=360" alt="邓颖超" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>邓颖超</b>1904–1992<br>妇女运动家、全国妇联领导人。</figcaption>
+          </figure>
+          <figure>
+            <div class="g-frame"><span class="g-mono" aria-hidden="true">李</span><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E6%9D%8E%E9%93%B6%E6%B2%B3%E4%BA%8E2011%E5%B9%B4%E5%BA%A6%E6%80%A7%E4%B8%8E%E6%80%A7%E5%88%AB%E4%BA%8B%E4%BB%B6%E8%AF%84%E7%82%B9%E4%B8%89%E6%96%B9%E4%BC%9A%E8%B0%88_%28cropped%29.jpg?width=360" alt="李银河" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"></div>
+            <figcaption><b>李银河</b>1952–<br>社会学家、性与性别研究学者。</figcaption>
+          </figure>
+        </div>
+
+        <!-- 二 关键立法 -->
+        <h3 class="subhead reveal"><span class="cjk">二、关键立法与制度</span><span class="sub-en">The Legal Framework</span></h3>
+        <div class="prose reveal">
+          <p class="cjk">制度是观察"国家女性主义"最实在的窗口。下面按时间列出影响最深远的法律与文件，标注其要点。</p>
+        </div>
+        <div class="targets reveal">
+          <div class="target"><span class="badge">1950</span><div><h4>《婚姻法》<span class="en">Marriage Law</span></h4><p class="cjk">新中国最早的法律之一。废除包办、买卖婚姻与纳妾，确立婚姻自由、一夫一妻与男女平等，被视为妇女解放的制度起点。</p></div></div>
+          <div class="target"><span class="badge">1954</span><div><h4>宪法·男女平等<span class="en">Constitution</span></h4><p class="cjk">首次以根本法形式规定：妇女在政治、经济、文化、社会与家庭生活各方面享有同男子平等的权利。</p></div></div>
+          <div class="target"><span class="badge">1992</span><div><h4>《妇女权益保障法》<span class="en">Law on Protection of Women's Rights</span></h4><p class="cjk">中国第一部保障妇女权益的专门法律，确立妇女在政治、文化、劳动、财产、人身、婚姻家庭等方面的权利（后经 2005、2018、2022 多次修订）。</p></div></div>
+          <div class="target"><span class="badge">1995</span><div><h4>北京世妇会·《北京宣言》<span class="en">Beijing Declaration</span></h4><p class="cjk">第四次世界妇女大会在北京召开，通过《北京宣言》与《行动纲领》，"社会性别（gender）"由此进入中国政策与学术话语，"男女平等"逐步上升为基本国策表述。</p></div></div>
+          <div class="target"><span class="badge">2005</span><div><h4>修法：基本国策入法 + 性骚扰<span class="en">2005 Amendment</span></h4><p class="cjk">将"实行男女平等是国家的基本国策"写入《妇女权益保障法》，并<strong>首次把"性骚扰"写入法律</strong>，规定禁止对妇女实施性骚扰。</p></div></div>
+          <div class="target"><span class="badge">2016</span><div><h4>《反家庭暴力法》<span class="en">Anti-Domestic Violence Law</span></h4><p class="cjk">中国<strong>首部反家暴专门法</strong>（3 月 1 日施行）。确立人身安全保护令、强制报告、告诫书等制度，并把精神侵害（辱骂、恐吓等）纳入家暴范畴。</p></div></div>
+          <div class="target"><span class="badge">2021</span><div><h4>《民法典》<span class="en">Civil Code</span></h4><p class="cjk">婚姻家庭编明确禁止家暴；人格权编规定禁止性骚扰、用人单位负有防治义务；同时新增"离婚冷静期"——后者在性别讨论中引发不少争议。</p></div></div>
+          <div class="target"><span class="badge">2022</span><div><h4>《妇女权益保障法》大修<span class="en">2022 Major Revision</span></h4><p class="cjk">2023 年 1 月施行。扩大人身安全保护令适用范围，强化反性骚扰与反拐卖，新增"国家机关、社会组织可支持受侵害妇女向法院起诉"等公益诉讼机制。</p></div></div>
+        </div>
+
+        <!-- 三 标志性案例 -->
+        <h3 class="subhead reveal"><span class="cjk">三、标志性案例与公共事件</span><span class="sub-en">Landmark Cases</span></h3>
+        <div class="prose reveal">
+          <p class="cjk">把抽象议题变成全民讨论的，往往是具体的人与事。以下按三条线索梳理，尽量保留时间、地点与处理结果等可考细节。</p>
+          <p class="cjk"><strong>① 街头行动主义（2012–2015）</strong></p>
+        </div>
+        <div class="cases reveal">
+          <div class="case"><span class="cyr">2012</span><h4>"受伤的新娘" &amp; 占领男厕所<span class="c-en">Bloodied Brides · Occupy Men's Toilets</span></h4><p class="cjk">2012 年 2 月，李婷婷等三名行动者身着染血婚纱走上北京街头，以行为艺术抗议家庭暴力；同年，多地女大学生发起"占领男厕所"行动，要求增建女厕、回应女性如厕排队难。</p><span class="c-tag">公共倡导 · 行为艺术</span></div>
+          <div class="case"><span class="cyr">2015</span><h4>女权五姐妹<span class="c-en">The Feminist Five</span></h4><p class="cjk">三八妇女节前夕，王曼、韦婷婷、郑楚然、李婷婷（李麦子）、武嵘嵘五位行动者因筹划"公交反性骚扰"活动，被以"寻衅滋事"刑事拘留 37 天，4 月 13 日取保获释，引发广泛国际关注。许多观察者视这一年为民间女权行动空间收紧的转折点。</p><span class="c-tag">反性骚扰倡导</span></div>
+        </div>
+        <div class="prose reveal" style="margin-top:1.4rem">
+          <p class="cjk"><strong>② #MeToo 在中国（2017–2023）</strong></p>
+        </div>
+        <div class="cases reveal">
+          <div class="case"><span class="cyr">2017</span><h4>北京电影学院·"阿廖沙"<span class="c-en">Prelude</span></h4><p class="cjk">2017 年 5 月，北电校友以"阿廖沙"为名在网络发文，讲述在校期间遭师长亲属性侵、维权时反遭打压的经历，被视为本轮讨论的前奏。</p><span class="c-tag">校园 · 前奏</span></div>
+          <div class="case"><span class="cyr">2018</span><h4>北航·罗茜茜——"中国第一案"<span class="c-en">The First Case</span></h4><p class="cjk">1 月 1 日，旅美博士罗茜茜实名举报北京航空航天大学教授陈小武性骚扰多名学生。一周内全国数十所高校上千名学生联署，呼吁建立校园反性骚扰机制；陈被撤职，教育部撤销其"长江学者"称号。被普遍视为中国 #MeToo 的开端。</p><span class="c-tag">高校 · 制度回应</span></div>
+          <div class="case"><span class="cyr">2018</span><h4>北大·岳昕与沈阳旧案<span class="c-en">Peking University</span></h4><p class="cjk">4 月，北大学生岳昕因要求校方公开 1998 年女生高岩之死（涉教授沈阳）的调查信息而受到压力。在相关信息被删除的背景下，她以"区块链"方式发布公开信对抗删帖，引发广泛声援。</p><span class="c-tag">信息公开 · 反审查</span></div>
+          <div class="case"><span class="cyr">2018–23</span><h4>弦子诉朱军<span class="c-en">Zhou v. Zhu</span></h4><p class="cjk">周晓璇（网名"弦子"）指控 2014 年实习期间遭央视主持人朱军猥亵，2018 年公开、2020 年立案。一审（2021）、二审（2022）均以证据不足驳回；朱军否认指控并曾提名誉权反诉。此案是中国 #MeToo 进入司法程序的标志性个案，也凸显了性骚扰案件的举证困境。</p><span class="c-tag">司法 · 举证困境</span></div>
+        </div>
+        <div class="prose reveal" style="margin-top:1.4rem">
+          <p class="cjk"><strong>③ 性别暴力与拐卖（2020–2022）</strong></p>
+        </div>
+        <div class="cases reveal">
+          <div class="case"><span class="cyr">2020</span><h4>拉姆案<span class="c-en">Lhamo</span></h4><p class="cjk">9 月，四川金川藏族女主播拉姆在直播中被前夫泼汽油焚烧，半月后离世，年仅 30 岁；她此前长期遭受家暴。凶手于 2022 年被执行死刑。案件推动了对"离婚后暴力""人身安全保护令落实"的讨论，民间出现制定"拉姆法案"的呼声。</p><span class="c-tag">家暴 · 离婚后暴力</span></div>
+          <div class="case"><span class="cyr">2022</span><h4>丰县/徐州"铁链女"<span class="c-en">The Chained Woman</span></h4><p class="cjk">1 月，江苏丰县一名被铁链拴颈、育有八孩的女子（官方称杨某侠）视频引爆舆论，相关话题在微博累计浏览量以百亿计。当地先后发布多份相互矛盾的通报，加剧公众质疑。2023 年，其"丈夫"董志民因虐待、非法拘禁，多名拐卖者因拐卖妇女罪被判刑（8 至 13 年），多名失职官员被处分。事件直接推动了反拐与《妇女权益保障法》修订的讨论。</p><span class="c-tag">拐卖 · 非法拘禁</span></div>
+          <div class="case"><span class="cyr">2022</span><h4>唐山烧烤店打人<span class="c-en">Tangshan Attack</span></h4><p class="cjk">6 月，河北唐山一烧烤店内，多名男子骚扰女性未果后实施暴力围殴，监控视频引发全国震动，把"性骚扰—暴力"的链条与公共安全摆上台面。案件以恶势力组织犯罪等罪名起诉数十名被告。</p><span class="c-tag">公共安全 · 性别暴力</span></div>
+        </div>
+
+        <!-- 四 关键数据 -->
+        <h3 class="subhead reveal"><span class="cjk">四、关键数据</span><span class="sub-en">The Data</span></h3>
+        <div class="prose reveal">
+          <p class="cjk">数据不会替我们下结论，但能划定讨论的边界。下面每一项都配有<strong>年份与来源</strong>；它们共同显示：中国在教育、健康、寿命等维度进展显著，但在出生性别比、经济回报与政治高层代表性上仍有明显差距。</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="fig">111.7<span class="u">∶100♀</span></div><div class="k">出生人口性别比<span class="en">Sex ratio at birth</span></div><span class="trend">2024 年；国际正常区间约 103–107</span><span class="src">来源：国家统计局 ·《卫生健康事业发展统计公报》</span></div>
+          <div class="stat"><div class="fig">≈1.0</div><div class="k">总和生育率<span class="en">Total fertility rate</span></div><span class="trend">2023 年约 1.02，处于全球极低水平</span><span class="src">来源：多家机构据国家统计局数据测算</span></div>
+          <div class="stat"><div class="fig">68.6<span class="u">%</span></div><div class="k">女性劳动参与率<span class="en">Female labour participation</span></div><span class="trend">15–64 岁，2019 年；较 1990 年的 79.4% 持续下降，但仍高于世界平均</span><span class="src">来源：世界银行</span></div>
+          <div class="stat"><div class="fig">77.1<span class="u">%</span></div><div class="k">性别工资比<span class="en">Gender pay ratio</span></div><span class="trend">2021 年城镇：女性平均收入约为男性的 77%</span><span class="src">来源：劳动经济学研究综述</span></div>
+          <div class="stat"><div class="fig">26.5<span class="u">%</span></div><div class="k">全国人大女代表<span class="en">Women in the NPC</span></div><span class="trend">2023 年第十四届，790 名，较上届 +1.64 个百分点</span><span class="src">来源：全国人大常委会办公厅</span></div>
+          <div class="stat"><div class="fig">13.8<span class="u">%</span></div><div class="k">上市公司女性董事<span class="en">Women on boards</span></div><span class="trend">2022 年；低于多数欧洲经济体</span><span class="src">来源：《中国女性职业发展报告》引世界经济论坛</span></div>
+          <div class="stat"><div class="fig">24.7<span class="u">%</span></div><div class="k">已婚女性曾遭家暴<span class="en">Ever experienced domestic violence</span></div><span class="trend">指婚姻中遭受过侮辱谩骂、殴打、限制人身自由等多种形式之一</span><span class="src">来源：全国妇联·国家统计局《第三期中国妇女社会地位调查》</span></div>
+          <div class="stat"><div class="fig">4<span class="u">%</span></div><div class="k">离婚案家暴认定率<span class="en">DV recognition in divorce cases</span></div><span class="trend">2020 年；反映取证难、认定标准严</span><span class="src">来源：法院司法实践研究</span></div>
+          <div class="stat"><div class="fig">103<span class="u">/148</span></div><div class="k">全球性别差距排名<span class="en">WEF Gender Gap rank</span></div><span class="trend">2025 年综合排名；其中"出生性别比"一项列 146/148</span><span class="src">来源：世界经济论坛《全球性别差距报告 2025》</span></div>
+          <div class="stat"><div class="fig">81<span class="u">岁</span></div><div class="k">女性预期寿命<span class="en">Female life expectancy</span></div><span class="trend">2023 年出生女性；较 2000 年提高约 6 岁</span><span class="src">来源：ChinaPower（据官方与 WEF 数据）</span></div>
+        </div>
+        <figure class="figure reveal">
+          <svg viewBox="0 0 720 320" role="img" aria-label="中国出生人口性别比 2021至2024 柱状图" preserveAspectRatio="xMidYMid meet">
+            <!-- y scale: 100 at y=270, 115 at y=40 -> 15 units over 230px => 15.33px/unit -->
+            <!-- normal band 103-107 -->
+            <rect x="70" y="224.06" width="600" height="61.33" fill="#3C5230" opacity=".13"/>
+            <text x="664" y="240" text-anchor="end" font-family="Archivo,sans-serif" font-size="10" letter-spacing=".5" fill="#3C5230">国际正常区间 103–107</text>
+            <!-- axes -->
+            <line x1="70" y1="40" x2="70" y2="285.4" stroke="#221C16" stroke-width="1.5"/>
+            <line x1="70" y1="285.4" x2="670" y2="285.4" stroke="#221C16" stroke-width="1.5"/>
+            <!-- gridlines + y labels (100,105,110,115) -->
+            <g font-family="Archivo,sans-serif" font-size="10" fill="#8A7C6A" text-anchor="end">
+              <line x1="66" y1="285.4" x2="670" y2="285.4" stroke="none"/>
+              <text x="62" y="289">100</text>
+              <line x1="70" y1="208.73" x2="670" y2="208.73" stroke="#E4DAC6" stroke-width="1"/><text x="62" y="212">105</text>
+              <line x1="70" y1="132.07" x2="670" y2="132.07" stroke="#E4DAC6" stroke-width="1"/><text x="62" y="135">110</text>
+              <line x1="70" y1="55.4" x2="670" y2="55.4" stroke="#E4DAC6" stroke-width="1"/><text x="62" y="59">115</text>
+            </g>
+            <!-- bars: value v -> height=(v-100)*15.333, y=285.4-height ; widths -->
+            <!-- 2021:110.9  2022:111.1  2023:111.2  2024:111.7 -->
+            <g fill="#9A1B30">
+              <rect x="120" y="118.26" width="90" height="167.13"><animate attributeName="height" from="0" to="167.13" dur="0.9s" fill="freeze"/><animate attributeName="y" from="285.4" to="118.26" dur="0.9s" fill="freeze"/></rect>
+              <rect x="260" y="115.20" width="90" height="170.20"><animate attributeName="height" from="0" to="170.20" dur="0.9s" begin="0.1s" fill="freeze"/><animate attributeName="y" from="285.4" to="115.20" dur="0.9s" begin="0.1s" fill="freeze"/></rect>
+              <rect x="400" y="113.67" width="90" height="171.73"><animate attributeName="height" from="0" to="171.73" dur="0.9s" begin="0.2s" fill="freeze"/><animate attributeName="y" from="285.4" to="113.67" dur="0.9s" begin="0.2s" fill="freeze"/></rect>
+              <rect x="540" y="106.0" width="90" height="179.4"><animate attributeName="height" from="0" to="179.4" dur="0.9s" begin="0.3s" fill="freeze"/><animate attributeName="y" from="285.4" to="106.0" dur="0.9s" begin="0.3s" fill="freeze"/></rect>
+            </g>
+            <!-- value labels -->
+            <g font-family="Fraunces,Georgia,serif" font-weight="900" font-size="15" fill="#6C1020" text-anchor="middle">
+              <text x="165" y="110">110.9</text><text x="305" y="107">111.1</text><text x="445" y="105.5">111.2</text><text x="585" y="98">111.7</text>
+            </g>
+            <!-- x labels -->
+            <g font-family="Archivo,sans-serif" font-size="12" fill="#4C4136" text-anchor="middle">
+              <text x="165" y="303">2021</text><text x="305" y="303">2022</text><text x="445" y="303">2023</text><text x="585" y="303">2024</text>
+            </g>
+          </svg>
+          <figcaption class="fig-cap cjk">数据图 · 中国出生人口性别比（每 100 名女婴对应的男婴数），2021–2024 逐年微升，持续高于国际正常区间（绿带）。<span class="fc-en">Sex ratio at birth, 2021–2024.</span> 来源：国家统计局 ·《卫生健康事业发展统计公报》。</figcaption>
+        </figure>
+
+        <!-- 五 话语场与争议 -->
+        <h3 class="subhead reveal"><span class="cjk">五、话语场与争议</span><span class="sub-en">Discourse &amp; Controversy</span></h3>
+        <div class="prose reveal">
+          <p class="cjk"><strong>审查与"米兔"。</strong>性别议题在中文网络常面临删帖与限流。MeToo 的中文讨论中，网民曾以"米兔"（rice bunny，谐音"米🐰兔🍚"表情）等方式规避关键词审查——这种"造词以续命"的策略本身，已成为观察中国网络性别表达的一个独特现象。</p>
+          <p class="cjk"><strong>"性别对立"与污名标签。</strong>网络上"田园女权""拳师"等带贬义的标签流行，"性别对立"既高热又高争议。支持者认为其中不少用法是对女权的污名化，批评者则指部分表达确有极端化倾向。理性的做法，是<strong>区分"作为思想与运动的女性主义"与"网络情绪化表达"</strong>——把后者的问题算到前者头上，是常见的误读。</p>
+          <p class="cjk"><strong>"剩女"话语。</strong>据新华社 2007 年报道，全国妇联曾把"剩女"定义为 27 岁以上的未婚女性，同年被收入教育部新词条，此后媒体大量使用。学者洪理达（Leta Hong Fincher）等分析认为，这一话语在一定程度上是被建构的，用以敦促城市高学历女性尽早结婚，并与出生性别比失衡导致的"剩男"问题相关联——这是一种有影响力的解读，学界亦存在不同看法。</p>
+          <p class="cjk"><strong>彩礼与"女德班"。</strong>高额彩礼、个别地方出现的"女德班"（宣扬"打不还手、骂不还口"等顺从观念）等现象，也不时引发关于性别观念是否真正现代化的争论。</p>
+          <p class="cjk"><strong>国家与民间的张力。</strong>回到开篇的框架：体制内的"国家女性主义"长于制度供给（立法、妇联系统、政策表述），而民间女权长于议题发现与公共动员。近年二者的张力，体现在民间行动空间的起伏与体制回应的速度之间。理解中国性别议题，需要同时看见这两条线。</p>
+        </div>
+
+        <!-- 六 学术与本土资源 -->
+        <h3 class="subhead reveal"><span class="cjk">六、学术与本土资源</span><span class="sub-en">Scholarship &amp; Local Roots</span></h3>
+        <div class="prose reveal">
+          <p class="cjk"><strong>李小江与"妇女研究运动"。</strong>1980 年代改革开放初期，学者李小江率先质疑"男女都一样"的旧解放叙事，著《夏娃的探索》等，推动"妇女研究"在中国从边缘走向显学，并进一步扩展为"性别研究"。值得注意的是，这一学科在中国很大程度上由学者与民间力量<strong>自发</strong>推动，而非完全自上而下。</p>
+          <p class="cjk"><strong>1995 北京世妇会的学术遗产。</strong>第四次世界妇女大会不仅是外交事件，也把"社会性别（gender）"这一分析工具正式带入中国学界与政策话语，深刻影响了此后的妇女/性别研究。</p>
+          <p class="cjk"><strong>开掘本土资源。</strong>当代研究者在口述史、家族史、地方志（乃至"女方志"）等方向持续努力，主张在与西方理论对话的同时，理解中国自身独特的性别经验——这正是后殖民女性主义"反对一切照搬西方"主张的本土回响。</p>
+          <div class="note cjk"><span class="tag">译名再提示</span>正因这段历史，中文里"女权"与"女性"两种译法各有侧重、各有拥护者；"女权"更强调权利与抗争，"女性"更强调性别视角与文化分析。理解语境，比争论用词对错更重要。</div>
+          <div class="note cjk"><span class="tag">客观性说明</span>本章对涉及拘留、审查、矛盾通报等敏感事件，只陈述有公开记录可考的事实，并尽量并列官方处理与外界质疑两方面信息，不替读者下结论。若需深入，建议进一步查阅原始报道与学术研究。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 MYTHS -->
+    <section class="section" id="myths">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">12</span> Clarifications</div>
+          <h2 class="sec-title"><span class="cjk">常见误解</span><span class="sec-title-en">Common Misconceptions</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">最后，澄清几个流传最广的误读。看懂它们，往往比记住任何一个流派都更有用。</p>
+        </div>
+        <div class="myths reveal">
+          <div class="myth"><div class="m-x">01</div><div class="m-body">
+            <div class="m-claim cjk"><span class="lab">误解</span>"女性主义就是仇恨男性。"</div>
+            <div class="m-real cjk"><span class="lab">澄清</span>它反对的是压迫性的制度与观念（性别主义），不是"男性"这一群体。许多流派明确指出：父权制同样伤害男性。目标是平等，不是报复。</div>
+          </div></div>
+          <div class="myth"><div class="m-x">02</div><div class="m-body">
+            <div class="m-claim cjk"><span class="lab">误解</span>"女性主义者的想法都一样。"</div>
+            <div class="m-real cjk"><span class="lab">澄清</span>恰恰相反。从温和的自由派到激进派，从交叉性到后结构主义，它们在根源诊断和行动方案上分歧巨大，甚至彼此尖锐批评。</div>
+          </div></div>
+          <div class="myth"><div class="m-x">03</div><div class="m-body">
+            <div class="m-claim cjk"><span class="lab">误解</span>"它想让女性凌驾于男性之上。"</div>
+            <div class="m-real cjk"><span class="lab">澄清</span>主流主张是<b>平等</b>，不是支配。把一种支配换成另一种支配，恰恰违背"无人因性别而被压迫"这一核心。</div>
+          </div></div>
+          <div class="myth"><div class="m-x">04</div><div class="m-body">
+            <div class="m-claim cjk"><span class="lab">误解</span>"现在已经平等了，不再需要女性主义。"</div>
+            <div class="m-real cjk"><span class="lab">澄清</span>各国进展确实不同，许多法律平等已经实现。但薪资差距、性别暴力、照护分工、公共代表性等议题，仍是持续讨论的焦点——是否"已经足够"，本身就是争论的一部分。</div>
+          </div></div>
+          <div class="myth"><div class="m-x">05</div><div class="m-body">
+            <div class="m-claim cjk"><span class="lab">误解</span>"我支持平等，但我不是女性主义者。"</div>
+            <div class="m-real cjk"><span class="lab">澄清</span>这是很常见的态度。但若你认同"人不应因性别被歧视或压迫"，那么你其实已经站在女性主义最核心的主张上——分歧往往只在标签，而非内核。</div>
+          </div></div>
+          <div class="myth"><div class="m-x">06</div><div class="m-body">
+            <div class="m-claim cjk"><span class="lab">误解</span>"女性主义是西方舶来品，与本土无关。"</div>
+            <div class="m-real cjk"><span class="lab">澄清</span>追求性别公正的思想与实践，在许多文化中都有本土根源（中国自清末以来即是如此）。后殖民女性主义更专门反对"一切都得照搬西方"的预设。</div>
+          </div></div>
+        </div>
+        <figure class="video reveal">
+          <button class="vid" type="button" data-yt="gkjW9PZBRfk" aria-label="播放视频：HeForShe 演讲 — Emma Watson（联合国）">
+            <span class="vid-bg" aria-hidden="true"></span>
+            <span class="vid-play" aria-hidden="true"><svg width="62" height="62" viewBox="0 0 64 64" role="img" aria-label="播放"><circle cx="32" cy="32" r="31" fill="rgba(252,251,249,.94)" stroke="#9A1B30" stroke-width="1.6"/><path d="M26 20.5 L46 32 L26 43.5 Z" fill="#9A1B30"/></svg></span>
+            <span class="vid-meta">
+              <span class="vid-tag">UN · HeForShe · 演讲 Talk</span>
+              <span class="vid-title cjk">HeForShe：性别平等也是男性的议题</span>
+              <span class="vid-by">Emma Watson · 联合国 United Nations, 2014</span>
+            </span>
+          </button>
+          <figcaption class="fig-cap cjk">正对上面第 01 条误解：沃森在联合国发起"HeForShe"，把男性请进对话——"女性主义"不是恨男人，而是邀请所有人一起争取平等。<span class="fc-en"><a href="https://youtu.be/gkjW9PZBRfk" target="_blank" rel="noopener">在 YouTube 观看 ↗ · 若内嵌无法播放请点此</a></span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 13 READING -->
+    <section class="section" id="reading">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="eyebrow"><span class="num">13</span> Sources</div>
+          <h2 class="sec-title"><span class="cjk">延伸阅读</span><span class="sec-title-en">Further Reading & Sources</span></h2>
+        </div>
+        <div class="prose reveal">
+          <p class="lede cjk">以下为奠基性的英文原典与权威参考，按年代排列。每条标注作者、年份、文献类型（出处），以及它在思想史上的意义，便于你按图索骥、进一步查证。</p>
+        </div>
+        <div class="refs reveal">
+          <div class="ref"><span class="yr">1792</span><div class="meta"><span class="title">A Vindication of the Rights of Woman</span> · <span class="author">Mary Wollstonecraft</span><span class="prov">专著 · 启蒙时期政治哲学</span><div class="gloss cjk">现代女性主义的奠基文本，主张女性的平等理性与受教育权。</div></div></div>
+          <div class="ref"><span class="yr">1869</span><div class="meta"><span class="title">The Subjection of Women</span> · <span class="author">John Stuart Mill</span><span class="prov">专著 · 自由主义哲学论著</span><div class="gloss cjk">以自由主义立场系统论证两性的法律与社会平等。</div></div></div>
+          <div class="ref"><span class="yr">1949</span><div class="meta"><span class="title">The Second Sex（Le Deuxième Sexe）</span> · <span class="author">Simone de Beauvoir</span><span class="prov">专著 · 存在主义哲学（法文原著）</span><div class="gloss cjk">提出女性被建构为"他者"，被视为第二波女性主义的思想源头。</div></div></div>
+          <div class="ref"><span class="yr">1963</span><div class="meta"><span class="title">The Feminine Mystique</span> · <span class="author">Betty Friedan</span><span class="prov">专著 · 社会评论</span><div class="gloss cjk">揭示战后家庭主妇"无名的不满"，点燃美国第二波运动。</div></div></div>
+          <div class="ref"><span class="yr">1970</span><div class="meta"><span class="title">Sexual Politics</span> · <span class="author">Kate Millett</span><span class="prov">专著 · 激进女性主义</span><div class="gloss cjk">把"父权制"确立为政治与文化分析的核心范畴。</div></div></div>
+          <div class="ref"><span class="yr">1975</span><div class="meta"><span class="title">Visual Pleasure and Narrative Cinema</span> · <span class="author">Laura Mulvey</span><span class="prov">期刊论文 · 电影理论（Screen）</span><div class="gloss cjk">提出"男性凝视"，奠定视觉文化中的性别批判。</div></div></div>
+          <div class="ref"><span class="yr">1977</span><div class="meta"><span class="title">The Combahee River Collective Statement</span> · <span class="author">Combahee River Collective</span><span class="prov">集体声明 · 黑人女性主义</span><div class="gloss cjk">交叉压迫分析的重要先声，影响深远。</div></div></div>
+          <div class="ref"><span class="yr">1982</span><div class="meta"><span class="title">In a Different Voice</span> · <span class="author">Carol Gilligan</span><span class="prov">专著 · 道德心理学</span><div class="gloss cjk">提出"关怀伦理"，挑战以男性为标准的道德理论。</div></div></div>
+          <div class="ref"><span class="yr">1984</span><div class="meta"><span class="title">Sister Outsider</span> · <span class="author">Audre Lorde</span><span class="prov">文集 · 演讲与散文</span><div class="gloss cjk">论差异、愤怒与边缘经验的经典文集。</div></div></div>
+          <div class="ref"><span class="yr">1986</span><div class="meta"><span class="title">Under Western Eyes</span> · <span class="author">Chandra Talpade Mohanty</span><span class="prov">期刊论文 · 后殖民女性主义</span><div class="gloss cjk">批评西方对第三世界女性的同质化想象。</div></div></div>
+          <div class="ref"><span class="yr">1989</span><div class="meta"><span class="title">Demarginalizing the Intersection of Race and Sex</span> · <span class="author">Kimberlé Crenshaw</span><span class="prov">法学论文 · University of Chicago Legal Forum</span><div class="gloss cjk">正式提出"交叉性"（intersectionality）概念。</div></div></div>
+          <div class="ref"><span class="yr">1990</span><div class="meta"><span class="title">Gender Trouble</span> · <span class="author">Judith Butler</span><span class="prov">专著 · 后结构主义</span><div class="gloss cjk">提出"性别操演"，重塑当代性别理论。</div></div></div>
+          <div class="ref"><span class="yr">2000</span><div class="meta"><span class="title">Feminism Is for Everybody</span> · <span class="author">bell hooks</span><span class="prov">专著 · 普及读物</span><div class="gloss cjk">面向大众的交叉性女性主义入门，语言平易。</div></div></div>
+          <div class="ref"><span class="yr">2007</span><div class="meta"><span class="title">Whipping Girl</span> · <span class="author">Julia Serano</span><span class="prov">专著 · 跨性别女性主义</span><div class="gloss cjk">跨性别女性主义的代表性著作。</div></div></div>
+          <div class="ref"><span class="yr">2014</span><div class="meta"><span class="title">Bad Feminist</span> · <span class="author">Roxane Gay</span><span class="prov">文集 · 当代散文</span><div class="gloss cjk">反思"完美女性主义者"的想象，亲切而真诚。</div></div></div>
+          <div class="ref"><span class="yr">2014</span><div class="meta"><span class="title">We Should All Be Feminists</span> · <span class="author">Chimamanda Ngozi Adichie</span><span class="prov">随笔 · 由 TED 演讲改写</span><div class="gloss cjk">当代流传最广的入门文本之一，简短有力。</div></div></div>
+          <div class="ref"><span class="yr">REF</span><div class="meta"><span class="title">Feminist Philosophy</span> · <span class="author">Stanford Encyclopedia of Philosophy</span><span class="prov">权威百科条目 · 学术综述（持续更新）</span><div class="gloss cjk">系统、可靠、可免费查阅的学术综述，适合深入与核查。</div></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="foot-inner">
+    <div class="about reveal">
+      <h4>关于本站 · About</h4>
+      <p class="cjk">这是一份<strong>教育性的导览</strong>，目标是准确、平衡地呈现女性主义"如何理解自身"，同时如实摆出它内部的争论与外界的批评。它不是单一立场的宣传，也不替你做判断——而是为你提供一张尽量完整的"思想地图"，方便你向他人分享，或自行阅读、形成自己的看法。需要补充某一流派、加入更多本土案例，或导出为可打印的文档，随时告诉我。</p>
+    </div>
+    <div class="colophon">
+      <span class="mk">女性主义 · A Map of Ideas</span>
+      <a href="#top" class="backtop">↑ 回到顶部 Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement;
+  /* reading progress */
+  var progress=document.getElementById('progress');
+  function onScroll(){var max=doc.scrollHeight-doc.clientHeight;var p=max>0?(doc.scrollTop/max)*100:0;progress.style.width=p+'%';}
+  /* reveal on scroll */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+  /* lite video facade — load the YouTube player only after a click (privacy + speed; degrades to a poster card + outbound link if embedding is blocked) */
+  document.querySelectorAll('.video .vid').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var id=btn.getAttribute('data-yt');if(!id)return;
+      var t=btn.querySelector('.vid-title');
+      var ifr=document.createElement('iframe');
+      ifr.className='vid-emb';
+      ifr.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';
+      ifr.title=(t?t.textContent:'video');
+      ifr.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      ifr.setAttribute('allowfullscreen','');
+      ifr.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+      btn.replaceWith(ifr);
+    });
+  });
+  /* mobile TOC */
+  var toc=document.getElementById('toc');
+  var toggle=document.getElementById('tocToggle');
+  var backdrop=document.getElementById('tocBackdrop');
+  function closeToc(){toc.classList.remove('open');backdrop.classList.remove('show');}
+  function openToc(){toc.classList.add('open');backdrop.classList.add('show');}
+  toggle.addEventListener('click',function(){toc.classList.contains('open')?closeToc():openToc();});
+  backdrop.addEventListener('click',closeToc);
+  toc.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(window.innerWidth<=1024)closeToc();});});
+  /* scrollspy */
+  var labels={define:'何谓女性主义 · Definition',change:'它想改变什么 · Agenda',critique:'它批判的对象 · Target',path:'它指出的路 · Path',waves:'历史的四次浪潮 · History',schools:'主要流派 · Schools',thinkers:'关键思想家 · Thinkers',glossary:'核心概念辞典 · Lexicon',debates:'争论与批评 · Debate',fractures:'不可调和的矛盾 · Fractures',china:'女性主义在中国 · China',myths:'常见误解 · Clarifications',reading:'延伸阅读 · Reading'};
+  var here=document.getElementById('here');
+  var sections=Array.prototype.slice.call(document.querySelectorAll('main .section'));
+  var links={};
+  toc.querySelectorAll('a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  function spy(){
+    var offset=150,cur=null;
+    for(var i=0;i<sections.length;i++){
+      if(sections[i].getBoundingClientRect().top<=offset){cur=sections[i];}else{break;}
+    }
+    for(var k in links){links[k].classList.remove('active');}
+    if(cur){
+      if(links[cur.id])links[cur.id].classList.add('active');
+      if(labels[cur.id])here.textContent=labels[cur.id];
+    }else{
+      here.textContent='序言 · Preface';
+    }
+  }
+  function frame(){onScroll();spy();}
+  var ticking=false;
+  window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(function(){frame();ticking=false;});ticking=true;}},{passive:true});
+  window.addEventListener('resize',frame,{passive:true});
+  frame();
+})();
+
+/* ===== interactive self-test: the value mirror ===== */
+(function(){
+  var mount=document.getElementById('quiz');
+  if(!mount) return;
+  var C={paper:'#FFFFFF',paper2:'#F5F3EE',paper3:'#ECEAE3',ink:'#1E1C19',inkSoft:'#544F48',inkFaint:'#8C887E',line:'#E7E3DB',crimson:'#9A1B30',ochre:'#AE7C24',teal:'#1E544F'};
+
+  var F={
+    liberal:{s:'自由主义',card:'自由主义 / 选择派',zh:'自由主义 / 大众选择派',en:'Liberal / Choice Feminism',
+      lead:'你把个体的权利与选择放在最前面，相信平等可以在现有制度里一步步争取到。你尊重每个女性"我自己决定"的声音，对宏大的结构改造保持谨慎。',
+      rep:'沃斯通克拉夫特、密尔、弗里丹、斯泰纳姆',
+      clash:'激进派与马克思派——他们会说你"只帮精英女性挤进旧体系，却不掀翻体系本身"。',
+      q:'「我不为我的性别求恩赐，只请你们把脚从我们脖子上挪开。」',qa:'萨拉·格里姆克'},
+    radical:{s:'激进',card:'激进女性主义',zh:'激进女性主义',en:'Radical Feminism',
+      lead:'你认为父权制本身才是最根本的压迫系统，温和的改良不够，必须从根上质疑并改造性别秩序。你警惕一切"自愿"背后的结构塑造。',
+      rep:'凯特·米利特、安德里亚·德沃金、凯瑟琳·麦金农',
+      clash:'自由主义与流行派——你会觉得她们把解放稀释成了个人风格与消费。',
+      q:'「在父权的注视下，女人往往成了自己最严苛的看守。」',qa:'桑德拉·巴特基'},
+    marxist:{s:'社会主义',card:'社会主义女性主义',zh:'社会主义 / 马克思主义女性主义',en:'Socialist / Marxist Feminism',
+      lead:'你坚信性别压迫与阶级剥削不可分割：不触动资本与经济结构，性别平等就只是少数人的平等。你拒绝在"为了女性"和"为了穷人"之间二选一。',
+      rep:'克拉拉·蔡特金、海蒂·哈特曼、西尔维娅·费代里奇',
+      clash:'自由主义派——你会说"让一个女人当上 CEO"对流水线上的女工毫无意义。',
+      q:'「家务劳动从未被付酬，却撑起了整个经济。」',qa:'西尔维娅·费代里奇'},
+    intersectional:{s:'交叉性',card:'交叉性 / 后殖民',zh:'交叉性 / 后殖民女性主义',en:'Intersectional / Postcolonial Feminism',
+      lead:'你拒绝抽象的"普遍女人"：种族、阶级、文化、殖民史交织在一起，决定了不同女性截然不同的处境。你对"以西方标准评判他人"格外警惕。',
+      rep:'金伯莱·克伦肖、奥德雷·洛德、钱德拉·莫汉蒂',
+      clash:'强调"统一姐妹情谊"的立场——你会指出那个"普遍女人"往往悄悄是个特权女人。',
+      q:'「用主人的工具，永远拆不掉主人的房子。」',qa:'奥德雷·洛德'},
+    postmodern:{s:'后现代',card:'后现代 / 跨性别',zh:'后现代 / 跨性别女性主义',en:'Postmodern / Trans Feminism',
+      lead:'你认为性别是被建构与操演出来的，而非生理决定的命运。你质疑"男/女"二元，主张以自我认同来理解性别，反对一切生理本质主义。',
+      rep:'朱迪斯·巴特勒、朱莉娅·塞拉诺',
+      clash:'以生理界定"女性"的性别批判立场——这是当代最尖锐的裂痕之一。',
+      q:'「性别是你不断在做的事，而非你天生所是。」',qa:'朱迪斯·巴特勒'},
+    cultural:{s:'关怀 / 差异',card:'关怀 / 差异女性主义',zh:'文化 / 差异 / 关怀女性主义',en:'Cultural / Care Feminism',
+      lead:'你认为不该把男性当作默认标准。那些被贬低为"女性化"的特质——关怀、关系、连结——本身有价值，应被尊重而非被抹平。',
+      rep:'卡罗尔·吉利根、内尔·诺丁斯',
+      clash:'主张"一视同仁"的平等派——他们担心强调差异会把女性重新关回笼子。',
+      q:'「一旦把男性当作人类的标准，女性就永远是那个偏离。」',qa:'卡罗尔·吉利根'},
+    faith:{s:'信仰 / 协商',card:'信仰 / 文化协商',zh:'信仰 / 文化协商女性主义',en:'Faith-based / Relativist Feminism',
+      lead:'你相信信仰与文化里有女性自己的能动空间，平等可以从传统内部争取；你反对用单一的世俗自由尺度，去判定别人"其实不自由"。',
+      rep:'阿米娜·瓦杜德、罗斯玛丽·吕特、（呼应）莫汉蒂',
+      clash:'世俗与激进派——他们更倾向认为某些宗教/文化习俗本质上压迫女性。',
+      q:'「当一种群体文化压迫其中的女性，『尊重文化』就成了问题本身。」',qa:'苏珊·穆勒·奥金（反方警示）'},
+    eco:{s:'生态',card:'生态女性主义',zh:'生态女性主义',en:'Ecofeminism',
+      lead:'你看到一条共同的逻辑：父权对女性的支配，与人类对自然的征服同根同源。你主张关怀、连结与可持续，反对一切"支配—被支配"的结构。',
+      rep:'范达娜·席娃、玛丽亚·米斯、格丽塔·加德',
+      clash:'更聚焦制度与法律的自由主义派——他们会觉得你把议题扩得太宽。',
+      q:'「同一种逻辑，既榨取女性，也榨取土地。」',qa:'范达娜·席娃'}
+  };
+
+  /* per-school theme colors — used by both the result bars and the share card */
+  var SC={liberal:'#9A1B30',radical:'#6C1020',marxist:'#2A3A6B',intersectional:'#5C2A47',postmodern:'#1E544F',cultural:'#AE7C24',faith:'#7C5230',eco:'#3C5230'};
+
+  // dx: + individual/agency, - structural ; dy: + difference/plural, - sameness/universal
+  var Q=[
+    {t:'当一个女性自愿做出在你看来"迎合父权"的选择（医美、当全职太太、追求"性感"），你第一反应更接近——',
+     o:[{t:'那是她的自由，应当被尊重。',w:{liberal:1,postmodern:2},dx:2},
+        {t:'值得追问：这份"自愿"有多少是被塑造的？',w:{radical:2,marxist:1,cultural:1,eco:2},dx:-2}]},
+    {t:'你认为压迫女性<b>最根本</b>的根源是——',
+     o:[{t:'法律与制度上尚未真正平等。',w:{liberal:3},dx:1},
+        {t:'父权制本身——一套男性支配的性别秩序。',w:{radical:3},dx:-1},
+        {t:'资本主义与父权合谋，阶级才是关键。',w:{marxist:3},dx:-1},
+        {t:'多重压迫的交织：种族·阶级·性别不可分。',w:{intersectional:3},dx:-1,dy:1}]},
+    {t:'"女性"这一身份，最应由什么来界定？',
+     o:[{t:'生理性别，与作为女孩长大的共同经验。',w:{radical:2},dy:-1},
+        {t:'一个人的自我性别认同。',w:{postmodern:4},dy:1},
+        {t:'根本不存在单一的"女性"，因人而异。',w:{intersectional:2,postmodern:2},dy:1}]},
+    {t:'对"姐妹情谊是全球性的"这句话，你更倾向于——',
+     o:[{t:'基本认同，性别是首要的共同战线。',w:{radical:1,liberal:1},dy:-1},
+        {t:'保持警惕——它常常抹去种族与阶级的差异。',w:{intersectional:2,faith:2},dy:1}]},
+    {t:'一位女性当上了大公司 CEO。你更倾向于——',
+     o:[{t:'这是实打实的进步，值得庆祝。',w:{liberal:2}},
+        {t:'要看她是否复制了压迫——"进入"不等于"胜利"。',w:{radical:1,marxist:3,eco:1}}]},
+    {t:'你心中"理想的平等"更接近——',
+     o:[{t:'女性获得与男性<b>一样</b>的权利与对待。',w:{liberal:1},dy:-1},
+        {t:'被贬低的"女性特质"（关怀·连结）被重新<b>尊重</b>。',w:{cultural:4,eco:2},dy:1}]},
+    {t:'对"我的偏好就是我的自由意志"这一说法，你——',
+     o:[{t:'认同：尊重一个人对自己体验的陈述，是底线。',w:{liberal:1,postmodern:2},dx:2},
+        {t:'怀疑：偏好可能是被规训出的"适应性偏好"。',w:{radical:2,cultural:2},dx:-2}]},
+    {t:'她说"戴头巾是我自愿的虔诚"，某西方女性主义者却称那是压迫。你更认同——',
+     o:[{t:'若压迫女性，文化或信仰都不能成为豁免理由。',w:{liberal:2},dx:1},
+        {t:'用西方标准去评判她，本身就是傲慢——该听她自己说。',w:{intersectional:1,faith:3},dx:1,dy:1},
+        {t:'信仰与女性主义并不冲突，可以从内部改革。',w:{faith:4}}]},
+    {t:'若有一天"为了女性"必须以牺牲"为了穷人 / 某个族群"为代价，你会——',
+     o:[{t:'优先性别这条战线。',w:{radical:1,liberal:1}},
+        {t:'拒绝这种取舍：经济正义与性别正义不可分割。',w:{marxist:3,intersectional:1,eco:2},dx:-1}]},
+    {t:'你最认同的<b>行动方式</b>是——',
+     o:[{t:'在体制内推动立法与政策。',w:{liberal:1},dx:1},
+        {t:'提高意识、组织集体行动、挑战结构。',w:{radical:2,marxist:1},dx:-2},
+        {t:'解构语言与文化中的性别二元。',w:{postmodern:4},dy:1},
+        {t:'从被忽视的边缘经验出发去理解世界。',w:{intersectional:3,cultural:1},dx:-1,dy:1}]},
+    {t:'"人对自然的征服"与"男性对女性的支配"，是同一种逻辑吗？',
+     o:[{t:'是，同根同源——都是"支配"的逻辑。',w:{eco:4}},
+        {t:'有关联，但可从中看见多重压迫的交织。',w:{eco:3,faith:2,intersectional:1}},
+        {t:'这是两回事，不该混为一谈。',w:{liberal:1,radical:1}}]},
+    {t:'你心中理想的"终局"是——',
+     o:[{t:'性别区分被彻底瓦解，不再定义任何人。',w:{postmodern:4},dy:1},
+        {t:'被贬低的"女性特质"与人和自然的连结被重新尊重。',w:{cultural:4,eco:2},dy:1},
+        {t:'平等，但保留并珍视性别差异。',w:{cultural:2,liberal:1}},
+        {t:'父权被推翻，女性真正自主。',w:{radical:2},dx:-1}]},
+    {t:'男性在女性主义里的位置，你认为——',
+     o:[{t:'重要的盟友；在不同信仰与文化里也应共同参与。',w:{liberal:1,faith:2}},
+        {t:'可以参与，但更要倾听被边缘化女性的声音。',w:{cultural:2,intersectional:1}},
+        {t:'某些空间应由女性自主、排除男性。',w:{radical:3},dx:-1}]},
+    {t:'谈"女性受压迫"时，你<b>最先</b>想到的是——',
+     o:[{t:'法律上仍然存在的不平等。',w:{liberal:2},dx:1},
+        {t:'全球供应链底层的女工。',w:{marxist:3},dx:-1},
+        {t:'被多重身份边缘化的女性。',w:{intersectional:3},dy:1},
+        {t:'不同文化与信仰中，女性自己的声音。',w:{faith:3,cultural:1}}]}
+  ];
+
+  var idx=0, answers=[], scores={}, cx=0, cy=0, lastData=null, lastCard=null;
+  Object.keys(F).forEach(function(k){scores[k]=0;});
+
+  function renderQ(){
+    var q=Q[idx], pct=Math.round(idx/Q.length*100);
+    var h='<div class="quiz-bar"><i style="right:'+(100-pct)+'%"></i></div><div class="quiz-body">';
+    h+='<div class="q-step"><span>第 '+(idx+1)+' / '+Q.length+' 题</span><button class="q-skip" data-act="skip">跳过本题 ›</button></div>';
+    h+='<div class="q-text cjk">'+q.t+'</div><div class="q-opts">';
+    q.o.forEach(function(op,i){ h+='<button class="q-opt cjk" data-i="'+i+'">'+op.t+'</button>'; });
+    h+='</div><div class="q-nav"><button class="q-back" data-act="back"'+(idx===0?' disabled':'')+'>‹ 上一题</button><span class="q-step" style="margin:0">没有标准答案 · 凭直觉</span></div></div>';
+    mount.innerHTML=h;
+  }
+  function choose(i){ var q=Q[idx]; if(!q||!q.o[i])return; answers[idx]={i:i,op:q.o[i]}; idx++; if(idx>=Q.length){compute();}else{renderQ();} }
+  function skip(){ answers[idx]={i:-1}; idx++; if(idx>=Q.length){compute();}else{renderQ();} }
+  function back(){ if(idx>0){ idx--; answers[idx]=undefined; renderQ(); } }
+
+  function compute(){
+    Object.keys(scores).forEach(function(k){scores[k]=0;}); cx=0; cy=0;
+    answers.forEach(function(a){
+      if(!a||a.i<0||!a.op) return;
+      var w=a.op.w||{};
+      Object.keys(w).forEach(function(k){ scores[k]+=w[k]; });
+      if(a.op.dx) cx+=a.op.dx;
+      if(a.op.dy) cy+=a.op.dy;
+    });
+    renderResult();
+  }
+
+  function renderResult(){
+    var ranked=Object.keys(scores).map(function(k){return {k:k,v:scores[k]};}).sort(function(a,b){return b.v-a.v;});
+    var max=ranked[0].v||1, any=ranked[0].v>0;
+    var primary=ranked[0].k;
+    var secondary=ranked[1] && ranked[1].v>0 && ranked[1].v>=max*0.45 ? ranked[1].k : null;
+    var tertiary=secondary && ranked[2] && ranked[2].v>0 && ranked[2].v>=max*0.45 ? ranked[2].k : null;
+    lastData={ranked:ranked, primary:primary, secondary:secondary, tertiary:tertiary, max:max, cx:cx, cy:cy};
+    var P=F[primary], S=secondary?F[secondary]:null, T=tertiary?F[tertiary]:null;
+
+    var h='<div class="q-result">';
+    if(!any){
+      h+='<div class="r-eyebrow">结果 · RESULT</div><h3>你几乎全部跳过了<span class="r-en">No answers yet</span></h3><p class="r-lead cjk">这面镜子需要你先照进去。回到题目，凭直觉选就好——没有人会看到。</p><div class="q-actions"><button class="q-btn" data-act="restart">开始自测</button></div></div>';
+      mount.innerHTML=h; return;
+    }
+    h+='<div class="r-eyebrow">你的价值体系最接近 · YOUR LEANING</div>';
+    h+='<h3 class="cjk">'+P.zh+'<span class="r-en">'+P.en+'</span></h3>';
+    h+='<p class="r-lead cjk">'+P.lead+'</p>';
+    if(S){
+      var extra=T?('，并兼有<b>'+T.zh.split(' / ')[0]+'</b>的痕迹'):'';
+      h+='<p class="r-lead cjk" style="margin-top:-.3rem">你同时带着一层<b>'+S.zh.split(' / ')[0]+'</b>的影子'+extra+'——这很正常，少有人是纯粹的某一派。</p>';
+    }
+    h+=compassSVG(cx,cy);
+    h+='<div class="r-bars">';
+    ranked.slice(0,6).forEach(function(r,n){
+      var p=Math.round(r.v/max*100);
+      var col=SC[r.k]||'#9A1B30';
+      h+='<div class="r-row'+(n===0?' top':'')+'"><span>'+F[r.k].zh.split(' / ')[0]+'</span><span class="r-track"><span class="r-fill" data-w="'+p+'" style="background:'+col+'"></span></span><span class="r-pct" style="color:'+col+'">'+p+'%</span></div>';
+    });
+    h+='</div>';
+    h+='<div class="r-grid"><div class="r-cell"><h6>代表人物</h6><p class="cjk">'+P.rep+'</p></div><div class="r-cell"><h6>你最可能与谁正面冲突</h6><p class="cjk">'+P.clash+'</p></div></div>';
+    h+='<blockquote class="r-quote cjk">'+P.q+'<cite>—— '+P.qa+'</cite></blockquote>';
+    h+='<p class="r-caveat cjk">这只是一面镜子，不是判决：它反映的是你此刻的倾向，而非给你贴上的永久标签。派系会过时，你借此看清的那条"律条"，才真正属于你。</p>';
+    h+='<div class="q-actions"><button class="q-btn" data-act="share">◆ 生成可分享的结果卡</button><button class="q-btn ghost" data-act="restart">重新测一次</button></div>';
+    h+='<div class="share-out" id="shareOut" hidden></div>';
+    h+='</div>';
+    mount.innerHTML=h;
+    requestAnimationFrame(function(){
+      var fills=mount.querySelectorAll('.r-fill');
+      Array.prototype.forEach.call(fills,function(f){ f.style.width=f.getAttribute('data-w')+'%'; });
+    });
+    if(mount.scrollIntoView) mount.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  function compassSVG(x,y){
+    var mx=8,my=6;
+    var px=Math.max(-mx,Math.min(mx,x))/mx, py=Math.max(-my,Math.min(my,y))/my;
+    var cxp=(150+px*112).toFixed(1), cyp=(150-py*112).toFixed(1);
+    return '<div class="compass"><svg viewBox="0 0 300 300" role="img" aria-label="你的价值坐标">'+
+      '<rect x="38" y="38" width="224" height="224" fill="none" stroke="#D9CDB6" stroke-width="1.5"/>'+
+      '<line x1="150" y1="38" x2="150" y2="262" stroke="#E4DAC6" stroke-width="1"/>'+
+      '<line x1="38" y1="150" x2="262" y2="150" stroke="#E4DAC6" stroke-width="1"/>'+
+      '<g font-family="Archivo,sans-serif" font-size="9" letter-spacing="1" fill="#8A7C6A">'+
+        '<text x="150" y="28" text-anchor="middle">差异 / 多元</text>'+
+        '<text x="150" y="284" text-anchor="middle">同一 / 普遍</text>'+
+        '<text x="30" y="153" text-anchor="end">改良</text>'+
+        '<text x="270" y="153" text-anchor="start">革命</text>'+
+      '</g>'+
+      '<circle cx="'+cxp+'" cy="'+cyp+'" r="9" fill="#9A1B30"/>'+
+      '<circle cx="'+cxp+'" cy="'+cyp+'" r="9" fill="none" stroke="#9A1B30" stroke-width="2"><animate attributeName="r" values="9;16;9" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2.2s" repeatCount="indefinite"/></circle>'+
+      '</svg></div>';
+  }
+
+  /* ---- shareable result card (canvas) ---- */
+  function strip(s){return (s||'').replace(/<[^>]+>/g,'');}
+  function ensureFonts(){
+    if(!document.fonts||!document.fonts.load) return Promise.resolve();
+    var list=['700 24px "Archivo"','900 66px "Noto Serif SC"','700 26px "Noto Serif SC"','400 31px "Noto Serif SC"','italic 30px "Fraunces"','600 18px "Archivo"','600 20px "Archivo"'];
+    try{ return Promise.all(list.map(function(f){return document.fonts.load(f);})).catch(function(){}); }
+    catch(e){ return Promise.resolve(); }
+  }
+  function rr(ctx,x,y,w,h,r){ if(w<2*r)r=w/2; if(h<2*r)r=h/2; ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+  function cwrap(ctx,s,x,y,maxW,lh){ var line='',out=y,i,t; for(i=0;i<s.length;i++){ t=line+s[i]; if(ctx.measureText(t).width>maxW && line){ ctx.fillText(line,x,out); line=s[i]; out+=lh; } else { line=t; } } if(line) ctx.fillText(line,x,out); return out+lh; }
+
+  function drawCard(ctx,d){
+    var P=F[d.primary], S=d.secondary?F[d.secondary]:null;
+    ctx.fillStyle=C.paper; ctx.fillRect(0,0,1080,1480);
+    ctx.fillStyle=C.paper3; ctx.fillRect(26,26,1028,10);
+    ctx.strokeStyle=C.ink; ctx.lineWidth=3; ctx.strokeRect(26,26,1028,1428);
+    ctx.strokeStyle=C.crimson; ctx.lineWidth=6; ctx.beginPath(); ctx.moveTo(80,150); ctx.lineTo(214,150); ctx.stroke();
+    ctx.textBaseline='alphabetic';
+    ctx.textAlign='left'; ctx.fillStyle=C.crimson; ctx.font='700 24px "Archivo",sans-serif';
+    ctx.fillText('我的女性主义流派 · MY FEMINIST LEANING',80,118);
+    ctx.fillStyle=C.ink; ctx.font='900 66px "Noto Serif SC",serif';
+    var y=cwrap(ctx,P.card,80,236,930,82);
+    ctx.fillStyle=C.inkFaint; ctx.font='italic 30px "Fraunces",Georgia,serif';
+    ctx.fillText(P.en,80,y); y+=46;
+    if(S){ ctx.fillStyle=C.crimson; ctx.font='700 26px "Noto Serif SC",serif'; ctx.fillText('兼具「'+S.s+'」倾向',80,y); y+=42; }
+    y+=18; ctx.fillStyle=C.inkSoft; ctx.font='400 31px "Noto Serif SC",serif';
+    y=cwrap(ctx,strip(P.lead),80,y,930,46);
+    y+=10; ctx.strokeStyle=C.line; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(80,y); ctx.lineTo(1000,y); ctx.stroke(); y+=40;
+    ctx.fillStyle=C.inkFaint; ctx.font='600 22px "Archivo",sans-serif'; ctx.fillText('你的价值分布 · VALUE DISTRIBUTION',80,y); y+=38;
+    var rows=d.ranked.slice(0,5), mx=d.max||1, i;
+    for(i=0;i<rows.length;i++){
+      var r=rows[i], frac=Math.max(0.04,r.v/mx);
+      ctx.fillStyle=i===0?C.ink:C.inkSoft; ctx.font=(i===0?'700':'400')+' 28px "Noto Serif SC",serif'; ctx.textAlign='left';
+      ctx.fillText(F[r.k].s,80,y+30);
+      ctx.fillStyle=C.paper2; rr(ctx,360,y+10,640,28,7); ctx.fill();
+      ctx.fillStyle=SC[r.k]||C.crimson;
+      rr(ctx,360,y+10,640*frac,28,7); ctx.fill();
+      y+=52;
+    }
+    y+=22; ctx.fillStyle=C.inkFaint; ctx.font='600 22px "Archivo",sans-serif'; ctx.textAlign='left'; ctx.fillText('你的价值坐标 · YOUR COMPASS',80,y); y+=22;
+    var bs=300, bx=(1080-bs)/2, by=y;
+    ctx.strokeStyle=C.line; ctx.lineWidth=2; ctx.strokeRect(bx,by,bs,bs);
+    ctx.beginPath(); ctx.moveTo(bx+bs/2,by); ctx.lineTo(bx+bs/2,by+bs); ctx.moveTo(bx,by+bs/2); ctx.lineTo(bx+bs,by+bs/2); ctx.stroke();
+    ctx.fillStyle=C.inkFaint; ctx.font='600 18px "Archivo",sans-serif';
+    ctx.textAlign='center'; ctx.fillText('差异 / 多元',bx+bs/2,by-12); ctx.fillText('同一 / 普遍',bx+bs/2,by+bs+26);
+    ctx.textAlign='right'; ctx.fillText('改良',bx-12,by+bs/2+6);
+    ctx.textAlign='left'; ctx.fillText('革命',bx+bs+12,by+bs/2+6);
+    var mxx=8,myy=6, px=Math.max(-mxx,Math.min(mxx,d.cx))/mxx, py=Math.max(-myy,Math.min(myy,d.cy))/myy;
+    var dotx=bx+bs/2+px*(bs/2-24), doty=by+bs/2-py*(bs/2-24);
+    ctx.fillStyle=C.crimson; ctx.beginPath(); ctx.arc(dotx,doty,16,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle=C.paper; ctx.beginPath(); ctx.arc(dotx,doty,5,0,Math.PI*2); ctx.fill();
+    y=by+bs+62;
+    ctx.fillStyle=C.ink; ctx.font='italic 30px "Fraunces","Noto Serif SC",serif'; ctx.textAlign='center';
+    y=cwrap(ctx,P.q,540,y,900,44);
+    ctx.fillStyle=C.inkFaint; ctx.font='600 20px "Archivo",sans-serif'; ctx.fillText('—— '+P.qa,540,y+2);
+  }
+
+  function dataURLtoBlob(durl){
+    var parts=durl.split(','), mime=(parts[0].match(/:(.*?);/)||[])[1]||'image/png';
+    var bin=atob(parts[1]), n=bin.length, u8=new Uint8Array(n);
+    while(n--) u8[n]=bin.charCodeAt(n);
+    return new Blob([u8],{type:mime});
+  }
+
+  function makeShareCard(){
+    if(!lastData) return;
+    var box=document.getElementById('shareOut');
+    if(box){ box.hidden=false; box.innerHTML='<p class="share-wait cjk">正在生成你的专属结果卡…</p>'; }
+    ensureFonts().then(function(){
+      var cv=document.createElement('canvas'); cv.width=1080; cv.height=1480;
+      var ctx=cv.getContext('2d');
+      drawCard(ctx,lastData);
+      var durl=cv.toDataURL('image/png');
+      var blob; try{ blob=dataURLtoBlob(durl); }catch(e){ blob=null; }
+      var P=F[lastData.primary], S=lastData.secondary?F[lastData.secondary]:null;
+      var text='我的女性主义流派是「'+P.s+'」'+(S?'，兼具「'+S.s+'」倾向':'')+'。你是哪一派？打开这份《女性主义：一份现代读本》做做价值自测就知道了 →';
+      lastCard={durl:durl,blob:blob,text:text};
+      showShareOut();
+    });
+  }
+
+  function showShareOut(){
+    var box=document.getElementById('shareOut'); if(!box||!lastCard) return;
+    var canNative = !!(navigator.canShare && lastCard.blob && (function(){ try{ return navigator.canShare({files:[new File([lastCard.blob],'x.png',{type:'image/png'})]}); }catch(e){ return false; } })());
+    var h='<div class="share-card-wrap"><img class="share-card-img" alt="我的女性主义流派结果卡" src="'+lastCard.durl+'"></div>';
+    h+='<p class="share-hint cjk">长按（手机）或右键保存图片，即可发到<b>微信、WhatsApp</b> 等聊天软件，与朋友比一比、聊一聊。</p>';
+    h+='<div class="share-btns">';
+    if(canNative) h+='<button class="q-btn" data-act="snative">分享到 微信 / WhatsApp…</button>';
+    h+='<button class="q-btn ghost" data-act="sdl">下载图片</button>';
+    h+='<button class="q-btn ghost" data-act="scopy">复制分享文案</button>';
+    h+='</div>';
+    box.innerHTML=h;
+    if(box.scrollIntoView) box.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+
+  function doNative(){
+    if(!lastCard||!lastCard.blob) return;
+    try{
+      var file=new File([lastCard.blob],'我的女性主义流派.png',{type:'image/png'});
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        navigator.share({files:[file],text:lastCard.text}).catch(function(){});
+      }
+    }catch(e){}
+  }
+  function doDownload(){
+    if(!lastCard) return;
+    var a=document.createElement('a'); a.href=lastCard.durl; a.download='我的女性主义流派.png';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+  function doCopy(btn){
+    if(!lastCard) return;
+    var done=function(){ if(btn){ btn.textContent='已复制 ✓'; setTimeout(function(){ btn.textContent='复制分享文案'; },1800); } };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(lastCard.text).then(done,function(){fallbackCopy(done);}); }
+    else { fallbackCopy(done); }
+  }
+  function fallbackCopy(done){
+    try{ var ta=document.createElement('textarea'); ta.value=lastCard.text; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done(); }catch(e){}
+  }
+
+  mount.addEventListener('click',function(e){
+    var opt=e.target.closest ? e.target.closest('.q-opt') : null;
+    if(opt){ choose(parseInt(opt.getAttribute('data-i'),10)); return; }
+    var act=e.target.getAttribute('data-act');
+    if(act==='skip') skip();
+    else if(act==='back') back();
+    else if(act==='restart'){ idx=0; answers=[]; lastData=null; lastCard=null; renderQ(); }
+    else if(act==='share') makeShareCard();
+    else if(act==='snative') doNative();
+    else if(act==='sdl') doDownload();
+    else if(act==='scopy') doCopy(e.target);
+  });
+
+  renderQ();
+})();
+</script>
+</body>
+</html>
